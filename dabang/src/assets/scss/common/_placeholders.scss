@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* _placeholders.scss */
+// extend 모음
+
+// mixin과 extend의 차이
+// mixin은 인자값을 활용할 수 있는 점ㅇ을 기준으로 분리
+
+// media query 로 사용금지
+
+// 선언방법
+// % 선택자를 이용
+// % 사용이유: extend로 쓰는 것인지 아닌지를 구분하기 위해서
+
+%text-size-adjust {
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+            text-size-adjust: none;
+}
+
+%border-box {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+%pre-white-space {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+%appearance {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+%position_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%,-50%);
+}
