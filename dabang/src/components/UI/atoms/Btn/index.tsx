@@ -6,7 +6,6 @@ export interface BtnProps {
     to?: string; // Link 경로
     href?: string; // a tag 경로
     styletype?: string; // button styling type (ex. priamry, disable)
-    // styletype?: 'primary' | 'alert'; // button styling type (ex. priamry, disable)
     disabled?: boolean; //disabled 여부
     onClick?: () => void;
 }

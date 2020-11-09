@@ -67,6 +67,10 @@ export const BtnStyle = css<BtnStyleProps>`
         css`
             color: #3f3f3f;
             background: transparent;
+
+            &:hover {
+                color: #3f3f3f;
+            }
         `}
 
     ${(props) =>
@@ -75,6 +79,10 @@ export const BtnStyle = css<BtnStyleProps>`
             border: 1px solid #848484;
             color: #3f3f3f;
             background: #f4f4f4;
+
+            &:hover {
+                color: #3f3f3f;
+            }
     `}
 `;
 

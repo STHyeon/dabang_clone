@@ -1,15 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-// // import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { Btn, BtnProps } from './index';
 
 export default {
     title: 'Atoms/Btn',
-    // component: Btn,
     argTypes: {
         styletype: {
+            description: 'Select Button Background-Color',
             control: {
                 type: 'select',
                 options: [
@@ -22,6 +21,15 @@ export default {
                     'transparent-border'
                 ]
             }
+        },
+        disabled: {
+            description: 'Toggle Button Control'
+        },
+        children: {
+            description: 'Button text'
+        },
+        onClick: {
+            description: 'Click event'
         }
     }
 } as Meta;
@@ -29,8 +37,27 @@ export default {
 const Template: Story<BtnProps> = (args) => <Btn {...args} />;
 const AllTemplate: Story<BtnProps> = (args) => (
     <>
-        <Btn {...args} />
-        <Btn {...args} />
+        <Btn styletype="primary" {...args}>
+            primary
+        </Btn>
+        <Btn styletype="secondary" {...args}>
+            secondary
+        </Btn>
+        <Btn styletype="alert" {...args}>
+            alert
+        </Btn>
+        <Btn styletype="danger" {...args}>
+            danger
+        </Btn>
+        <Btn styletype="success" {...args}>
+            success
+        </Btn>
+        <Btn styletype="transparent" {...args}>
+            transparent
+        </Btn>
+        <Btn styletype="transparent-border" {...args}>
+            transparent-border
+        </Btn>
     </>
 );
 
@@ -62,61 +89,3 @@ export const Allstyle = AllTemplate.bind({});
 Allstyle.args = {
     disabled: false
 };
-
-// export const allstyle: React.FC = () => (
-//     <div
-//         style={{
-//             display: 'flex',
-//             flexDirection: 'column'
-//         }}
-//     >
-//         <Btn
-//             styletype={'primary'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'secondary'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'danger'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'alert'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'success'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'transparent'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'transparent-border'}
-//             disabled={boolean('disabled', false)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//         <Btn
-//             styletype={'transparent-hover'}
-//             disabled={boolean('disabled', true)}
-//             children={'Button'}
-//             onClick={action('onClick')}
-//         />
-//     </div>
-// );
