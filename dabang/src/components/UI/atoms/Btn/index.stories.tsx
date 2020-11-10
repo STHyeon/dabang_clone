@@ -36,7 +36,7 @@ export default {
 
 const Template: Story<BtnProps> = (args) => <Btn {...args} />;
 const AllTemplate: Story<BtnProps> = (args) => (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Btn styletype="primary" {...args}>
             primary
         </Btn>
@@ -58,7 +58,7 @@ const AllTemplate: Story<BtnProps> = (args) => (
         <Btn styletype="transparent-border" {...args}>
             transparent-border
         </Btn>
-    </>
+    </div>
 );
 
 export const general = Template.bind({});
