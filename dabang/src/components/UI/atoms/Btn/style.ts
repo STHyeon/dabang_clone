@@ -7,13 +7,13 @@ interface BtnStyleProps {
 
 export const BtnStyle = css<BtnStyleProps>`
     display:inline-block;
-    width: 14rem;
-    height: 40px;
+    /* width: 14rem; */
+    /* height: 40px; */
     padding: 0;
     border: 0;
-    border-radius: 0.3rem;
+    /* border-radius: 0.3rem; */
     font-size: 15px;
-    line-height: 40px;
+    /* line-height: 40px; */
     text-align: center;
     transition: opacity 0.2s ease 0s, background 0.2s ease 0s, color 0.2s ease 0s;
 
