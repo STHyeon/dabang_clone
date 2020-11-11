@@ -73,7 +73,7 @@ export function Card2({
     return (
         <S.CardWrapper type2>
             <S.LinkWrapper to={to}>
-                <S.ImgWrapper>
+                <S.ImgWrapper type2>
                     <Img src={TestImg} alt="테스트 이미지" />
                 </S.ImgWrapper>
 
@@ -128,7 +128,7 @@ export function Card3({
     return (
         <S.CardWrapper type3>
             <S.LinkWrapper to={to}>
-                <S.ImgWrapper>
+                <S.ImgWrapper type3>
                     <Img src={TestImg} alt="테스트 이미지" />
                 </S.ImgWrapper>
 

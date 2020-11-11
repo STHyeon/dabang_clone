@@ -73,11 +73,15 @@ export const ImgWrapper = styled.div<Props>`
         css`
             border-radius: 0;
         `}
+
+    ${(props) =>
+        (props.type2 || props.type3) &&
+        css`
+            margin: 0 0 10px;
+        `}
 `;
 
-export const FlagWrapper = styled.div`
-    margin: 10px 0 0;
-`;
+export const FlagWrapper = styled.div``;
 
 export const Flag = styled.div<Props>`
     display: inline-block;
