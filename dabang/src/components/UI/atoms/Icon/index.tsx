@@ -1,12 +1,8 @@
 import React from 'react';
 import * as S from './style';
 
-// type A<T> = {
-//     A:
-// }
-
 export interface IconProps {
-    src?: any; // 이미지 주소
+    src?: string; // 이미지 주소
     alt?: string; // 이미지 설명
     height?: string;
 }

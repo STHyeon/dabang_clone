@@ -1,8 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Img, Icon, EventDate1, EventDate2 } from 'components/UI';
-import TestImg from 'assets/images/test.png';
+import { Img, Icon, EventDate } from 'components/UI';
 import TabIcon from 'assets/images/tab.svg';
 
 export interface CardProps {
@@ -19,6 +18,7 @@ export interface CardProps {
     complexData?: boolean; // 단지정보 on/off
     to: string; // 이동 페이지
     imgSrc?: string; // 이미지 주소
+    alt?: string; // 이미지 설명
     chkDate?: Date; // 확인 날짜
     address?: string; // 상품 주소
     price?: string; // 상품 가격
@@ -37,6 +37,7 @@ export function Card({
     FlagValid,
     Flag,
     imgSrc,
+    alt,
     complexData,
     ableRoom
 }: CardProps): React.ReactElement {
@@ -46,7 +47,7 @@ export function Card({
                 <S.CardWrapper type1>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type1>
-                            <Img src={TestImg} alt="테스트 이미지" />
+                            <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
 
                         {title && (
@@ -70,7 +71,7 @@ export function Card({
                 <S.CardWrapper type2>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type2>
-                            <Img src={TestImg} alt="테스트 이미지" />
+                            <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
 
                         {(FlagValid || Flag) && (
@@ -78,7 +79,10 @@ export function Card({
                                 {FlagValid && <S.Flag FlagValid>플러스+</S.Flag>}
                                 {Flag && (
                                     <S.Flag>
-                                        {Flag} {chkDate && <EventDate1 dateAt={chkDate} />}
+                                        {Flag}{' '}
+                                        {chkDate && (
+                                            <EventDate selectType="type01" dateAt={chkDate} />
+                                        )}
                                     </S.Flag>
                                 )}
                             </S.FlagWrapper>
@@ -112,7 +116,7 @@ export function Card({
                 <S.CardWrapper type3>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type3>
-                            <Img src={TestImg} alt="테스트 이미지" />
+                            <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
 
                         {title && <S.TitleWrapper type3>{title}</S.TitleWrapper>}
@@ -129,7 +133,7 @@ export function Card({
                                 {chkDate && (
                                     <S.RoomInfoWrapper>
                                         <S.AndWrapper>·</S.AndWrapper>
-                                        <EventDate2 dateAt={chkDate} />
+                                        <EventDate selectType="type02" dateAt={chkDate} />
                                     </S.RoomInfoWrapper>
                                 )}
                             </>
@@ -168,7 +172,7 @@ export function Card({
                 <S.CardWrapper type4>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper>
-                            <Img src={TestImg} alt="테스트 이미지" />
+                            <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
 
                         {(description1 || description2) && (

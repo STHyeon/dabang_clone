@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import * as S from './style';
 import { DateFormat1, DateFormat2 } from 'utils/dateFormat/DateFormat';
 
 export interface EventDateProps {

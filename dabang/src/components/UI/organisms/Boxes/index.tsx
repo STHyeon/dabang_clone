@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { FormInput2 } from 'components/UI';
+import { FormInput } from 'components/UI';
 
 export interface BoxesProps {
     ListText?: string;
@@ -18,7 +18,8 @@ export function Boxes1(): React.ReactElement {
                 살고 싶으신가요?
             </S.MainText>
 
-            <FormInput2
+            <FormInput
+                selectType="type02"
                 btnText="방 찾기"
                 styletype="secondary"
                 description="검색어를 입력해주세요."
