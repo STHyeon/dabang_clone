@@ -38,7 +38,7 @@ export const BtnStyle = css<BtnStyleProps>`
         props.styletype === 'secondary' &&
         css`
             color: #ffffff;
-            background: #55a6fc;
+            background: #1374f8;
         `}
 
     ${(props) =>
