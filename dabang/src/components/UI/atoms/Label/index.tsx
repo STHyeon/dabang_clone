@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './style';
 
 export interface LabelProps {
-    name: string;
+    name?: string;
     required?: boolean;
     htmlfor?: string;
 }

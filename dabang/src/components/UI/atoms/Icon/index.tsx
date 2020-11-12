@@ -6,8 +6,8 @@ import * as S from './style';
 // }
 
 export interface IconProps {
-    src: any; // 이미지 주소
-    alt: string; // 이미지 설명
+    src?: any; // 이미지 주소
+    alt?: string; // 이미지 설명
     height?: string;
 }
 

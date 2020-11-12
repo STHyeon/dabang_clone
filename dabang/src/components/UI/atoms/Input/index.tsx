@@ -9,6 +9,7 @@ export interface InputProps {
     defaultValue?: string;
     placeholder?: string;
     value?: string | number;
+    inputHeight?: string;
 }
 
 export function Input({ id, description, ...props }: InputProps): React.ReactElement {
