@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './style';
 
 export interface BtnProps {
-    children: React.ReactElement | string; // 버튼 내용 또는 엘리먼트
+    children?: React.ReactElement | string; // 버튼 내용 또는 엘리먼트
     to?: string; // Link 경로
     href?: string; // a tag 경로
     styletype?: string; // button styling type (ex. priamry, disable)

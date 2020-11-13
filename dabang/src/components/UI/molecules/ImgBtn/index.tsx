@@ -4,8 +4,8 @@ import * as S from './style';
 import { Btn, Img } from 'components/UI';
 
 export interface ImgBtnProps {
-    src: string; // 이미지 주소
-    alt: string; // 이미지 설명
+    src?: string; // 이미지 주소
+    alt?: string; // 이미지 설명
     to?: string; // 외부 링크
     href?: string; // 외부 링크
     styletype?: string; // 버튼 타입

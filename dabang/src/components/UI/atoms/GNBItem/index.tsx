@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './style';
 
 export interface GNBItemProps {
-    children: string | React.ReactElement;
+    children?: string | React.ReactElement;
     active?: boolean;
     type01?: boolean; // 탭 유형1
     type02?: boolean; // 탭 유형2

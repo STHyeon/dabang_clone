@@ -5,7 +5,7 @@ import { Label, Icon } from 'components/UI';
 import BgIcon from 'assets/images/search.svg';
 
 export interface FormInputProps {
-    selectType: string; // 타입선택
+    FormInputType?: string; // 타입선택
     labelName?: string; // label 내용
     htmlfor?: string; // 접근성
     invalid?: boolean; // 오류 체크
@@ -25,7 +25,7 @@ export interface FormInputProps {
 }
 
 export function FormInput({
-    selectType,
+    FormInputType,
     captionContent,
     labelName,
     htmlfor,
@@ -40,7 +40,7 @@ export function FormInput({
 }: FormInputProps): React.ReactElement {
     return (
         <S.FormInputContainer>
-            {selectType === 'type01' && (
+            {FormInputType === 'type01' && (
                 <>
                     <Label htmlfor={htmlfor} name={labelName} {...props} />
                     <S.FormInput inputHeight={inputHeight} {...props} />
@@ -48,7 +48,7 @@ export function FormInput({
                 </>
             )}
 
-            {selectType === 'type02' && (
+            {FormInputType === 'type02' && (
                 <>
                     {labelName && <Label htmlfor={htmlfor} name={labelName} {...props} />}
                     <S.IncludeBtn type02>

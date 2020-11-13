@@ -13,18 +13,18 @@ const Template3: Story<GNBProps> = (args) => <GNBType {...args} />;
 
 export const AfterBar = Template1.bind({});
 AfterBar.args = {
-    selectType: 'type01',
+    GNBType: 'type01',
     items: ['a', 'b', 'c', 'd', 'e']
 };
 
 export const AfterNone = Template2.bind({});
 AfterNone.args = {
-    selectType: 'type02',
+    GNBType: 'type02',
     items: ['a', 'b', 'c', 'd', 'e']
 };
 
 export const AfterComma = Template3.bind({});
 AfterComma.args = {
-    selectType: 'type03',
+    GNBType: 'type03',
     items: ['a', 'b', 'c', 'd', 'e']
 };

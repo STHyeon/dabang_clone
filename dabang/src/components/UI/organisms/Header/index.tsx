@@ -13,15 +13,15 @@ export function Header(): React.ReactElement {
                     <ImgBtn src={logo} alt="로고 사진" />
                 </S.HeaderWrapper>
                 <S.HeaderWrapper fl_l>
-                    <GNBType selectType="type01" items={HEADER1} />
+                    <GNBType GNBType="type01" items={HEADER1} />
                 </S.HeaderWrapper>
             </div>
             <div className="fl_r">
                 <S.HeaderWrapper fl_r>
-                    <GNBType selectType="type02" items={HEADER2} />
+                    <GNBType GNBType="type02" items={HEADER2} />
                 </S.HeaderWrapper>
                 <S.HeaderWrapper fl_r>
-                    <GNBType selectType="type03" items={HEADER3} />
+                    <GNBType GNBType="type03" items={HEADER3} />
                 </S.HeaderWrapper>
             </div>
         </S.Container>

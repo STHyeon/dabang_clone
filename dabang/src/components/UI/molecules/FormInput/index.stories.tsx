@@ -12,7 +12,7 @@ const Template2: Story<FormInputProps> = (args) => <FormInput {...args} />;
 
 export const general = Template1.bind({});
 general.args = {
-    selectType: 'type01',
+    FormInputType: 'type01',
     labelName: '이메일',
     required: false,
     invalid: false,
@@ -23,7 +23,7 @@ general.args = {
 
 export const include_btn = Template2.bind({});
 include_btn.args = {
-    selectType: 'type02',
+    FormInputType: 'type02',
     labelName: '',
     required: false,
     bgIcon: false,

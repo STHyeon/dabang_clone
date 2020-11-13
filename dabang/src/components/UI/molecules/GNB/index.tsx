@@ -4,14 +4,14 @@ import * as S from './style';
 import { GNBItem } from 'components/UI';
 
 export interface GNBProps {
-    selectType: string;
+    GNBType?: string;
     items: string[];
     tabIndex?: number;
     onTabClicked?: (tabIndex: number) => void;
 }
 
 export function GNBType({
-    selectType,
+    GNBType,
     items,
     tabIndex = 0,
     onTabClicked
@@ -24,7 +24,7 @@ export function GNBType({
 
     return (
         <S.Container key={currentTabIndex}>
-            {selectType === 'type01' && (
+            {GNBType === 'type01' && (
                 <>
                     {items.map((item: string, index: number) => (
                         <GNBItem
@@ -41,7 +41,7 @@ export function GNBType({
                 </>
             )}
 
-            {selectType === 'type02' && (
+            {GNBType === 'type02' && (
                 <>
                     {items.map((item: string, index: number) => (
                         <GNBItem
@@ -58,7 +58,7 @@ export function GNBType({
                 </>
             )}
 
-            {selectType === 'type03' && (
+            {GNBType === 'type03' && (
                 <>
                     {items.map((item: string, index: number) => (
                         <GNBItem

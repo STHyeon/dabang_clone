@@ -3,9 +3,11 @@ import React from 'react';
 import * as S from './style';
 import { Img, Icon, EventDate } from 'components/UI';
 import TabIcon from 'assets/images/tab.svg';
+import PlusIcon from 'assets/images/plus.svg';
 
 export interface CardProps {
-    selectType: string; // 카트 유형 선택
+    CardType?: string; // 카트 유형 선택
+    to: string; // 이동 페이지
     title?: string | number; // 제목
     description1?: string; // 상세설명1
     description2?: string; // 상세설명2
@@ -16,7 +18,6 @@ export interface CardProps {
     Flag?: string; // 태그내용
     ableRoom?: number; // 거래가능한 방 개수
     complexData?: boolean; // 단지정보 on/off
-    to: string; // 이동 페이지
     imgSrc?: string; // 이미지 주소
     alt?: string; // 이미지 설명
     chkDate?: Date; // 확인 날짜
@@ -25,7 +26,7 @@ export interface CardProps {
 }
 
 export function Card({
-    selectType,
+    CardType,
     to,
     title,
     chkDate,
@@ -43,7 +44,7 @@ export function Card({
 }: CardProps): React.ReactElement {
     return (
         <>
-            {selectType === 'type01' && (
+            {CardType === 'type01' && (
                 <S.CardWrapper type1>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type1>
@@ -67,7 +68,7 @@ export function Card({
                 </S.CardWrapper>
             )}
 
-            {selectType === 'type02' && (
+            {CardType === 'type02' && (
                 <S.CardWrapper type2>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type2>
@@ -81,7 +82,7 @@ export function Card({
                                     <S.Flag>
                                         {Flag}{' '}
                                         {chkDate && (
-                                            <EventDate selectType="type01" dateAt={chkDate} />
+                                            <EventDate EventDateType="type01" dateAt={chkDate} />
                                         )}
                                     </S.Flag>
                                 )}
@@ -112,7 +113,7 @@ export function Card({
                 </S.CardWrapper>
             )}
 
-            {selectType === 'type03' && (
+            {CardType === 'type03' && (
                 <S.CardWrapper type3>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper type3>
@@ -133,7 +134,7 @@ export function Card({
                                 {chkDate && (
                                     <S.RoomInfoWrapper>
                                         <S.AndWrapper>·</S.AndWrapper>
-                                        <EventDate selectType="type02" dateAt={chkDate} />
+                                        <EventDate EventDateType="type02" dateAt={chkDate} />
                                     </S.RoomInfoWrapper>
                                 )}
                             </>
@@ -147,7 +148,7 @@ export function Card({
                         )}
 
                         {(complexData || ableRoom) && (
-                            <div>
+                            <>
                                 {ableRoom && (
                                     <S.InfoListWrapper>
                                         거래가능한 방
@@ -162,13 +163,13 @@ export function Card({
                                         </S.InfoDataWrapper>
                                     </S.InfoListWrapper>
                                 )}
-                            </div>
+                            </>
                         )}
                     </S.LinkWrapper>
                 </S.CardWrapper>
             )}
 
-            {selectType === 'type04' && (
+            {CardType === 'type04' && (
                 <S.CardWrapper type4>
                     <S.LinkWrapper to={to}>
                         <S.ImgWrapper>
@@ -186,6 +187,38 @@ export function Card({
                             </S.SubWrapper>
                         )}
                     </S.LinkWrapper>
+                </S.CardWrapper>
+            )}
+
+            {CardType === 'type05' && (
+                <S.CardWrapper>
+                    {to ? (
+                        <S.LinkWrapper to={to}>
+                            <div>
+                                <S.SeeWrapper>
+                                    <S.SeeText hasLink>{title}</S.SeeText>
+                                    <svg width="35" height="35" viewBox="0 0 35 35">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <circle
+                                                cx="17.5"
+                                                cy="17.5"
+                                                r="17.5"
+                                                fill="#3185F8"
+                                            ></circle>
+                                            <g fill="#FFF">
+                                                <path d="M10 17h15v1H10z"></path>
+                                                <path d="M17 10h1v15h-1z"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </S.SeeWrapper>
+                            </div>
+                        </S.LinkWrapper>
+                    ) : (
+                        <S.SeeWrapper>
+                            <S.SeeText>{title}</S.SeeText>
+                        </S.SeeWrapper>
+                    )}
                 </S.CardWrapper>
             )}
         </>

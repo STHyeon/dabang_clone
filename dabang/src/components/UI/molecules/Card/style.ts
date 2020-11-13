@@ -9,6 +9,7 @@ interface Props {
     type3?: boolean;
     type4?: boolean;
     styleroom?: boolean;
+    hasLink?: boolean;
 }
 
 export const CardWrapper = styled.div<Props>`
@@ -177,4 +178,27 @@ export const AddressWrapper = styled.div`
     color: #dedede;
 `;
 
-// export const Wrapper = styled.div``;
+export const SeeWrapper = styled.div`
+    width: 280px;
+    height: 186px;
+    border: 1px dotted #d6d8db;
+    background: #fbfbfc;
+    text-align: center;
+`;
+
+export const SeeText = styled.p<Props>`
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 186px;
+    color: #9498a0;
+
+    ${(props) =>
+        props.hasLink &&
+        css`
+            margin: 0 0 10px;
+            padding: 67px 0 0;
+            line-height: 1.1;
+            color: #3185f8;
+            background: #ffffff;
+        `}
+`;

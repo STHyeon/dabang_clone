@@ -18,12 +18,12 @@ const Template2: Story<EventDateProps> = (args) => <EventDate {...args} />;
 
 export const FullDate = Template1.bind({});
 FullDate.args = {
-    selectType: 'type01',
+    EventDateType: 'type01',
     dateAt: Now
 };
 
 export const UntilMonths = Template2.bind({});
 UntilMonths.args = {
-    selectType: 'type02',
+    EventDateType: 'type02',
     dateAt: Now
 };

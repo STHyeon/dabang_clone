@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { FormInput2, GNBType1 } from 'components/UI';
-
 interface Props {
     type01?: boolean;
     type02?: boolean;
@@ -32,6 +30,7 @@ export const ListText = styled.div<Props>`
     ${(props) =>
         props.type02 &&
         css`
+            margin: 0 0 20px;
             color: #666666;
         `}
 `;
@@ -52,3 +51,5 @@ export const SideMainText = styled.div`
         border-left: 1px solid #c5c5c5;
     }
 `;
+
+export const ListData = styled.div``;

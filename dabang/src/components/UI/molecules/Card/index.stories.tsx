@@ -4,28 +4,32 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Card, CardProps } from './index';
 import TestImg from 'assets/images/test.png';
 
+import {
+    MORESEECOMPLEXTEXT,
+    RECENTLYCOMPLEXTEXT,
+    MORESEEROOMTEXT,
+    RECENTLYROOMTEXT
+} from 'utils/contents/String';
+
 export default {
     title: 'Molecules/Card'
 } as Meta;
 
 const Now = new Date();
-const Template1: Story<CardProps> = (args) => <Card {...args} />;
-const Template2: Story<CardProps> = (args) => <Card {...args} />;
-const Template3: Story<CardProps> = (args) => <Card {...args} />;
-const Template4: Story<CardProps> = (args) => <Card {...args} />;
+const Template: Story<CardProps> = (args) => <Card {...args} />;
 
-export const Main = Template1.bind({});
+export const Main = Template.bind({});
 Main.args = {
-    selectType: 'type01',
+    CardType: 'type01',
     imgSrc: `${TestImg}`,
     to: '/',
     title: 'test',
     chkDate: Now
 };
 
-export const Detail1 = Template2.bind({});
+export const Detail1 = Template.bind({});
 Detail1.args = {
-    selectType: 'type02',
+    CardType: 'type02',
     title: 'test',
     FlagValid: true,
     Flag: '플러스',
@@ -38,9 +42,9 @@ Detail1.args = {
     chkDate: Now
 };
 
-export const Detail2 = Template3.bind({});
+export const Detail2 = Template.bind({});
 Detail2.args = {
-    selectType: 'type03',
+    CardType: 'type03',
     to: '',
     title: '강변',
     room: '오피스텔',
@@ -52,11 +56,39 @@ Detail2.args = {
     chkDate: Now
 };
 
-export const Detail3 = Template4.bind({});
+export const Detail3 = Template.bind({});
 Detail3.args = {
-    selectType: 'type04',
+    CardType: 'type04',
     to: '/',
     imgSrc: `${TestImg}`,
     description1: '보증금',
     description2: '5억'
+};
+
+export const SeeRoom = Template.bind({});
+SeeRoom.args = {
+    CardType: 'type05',
+    to: '',
+    title: MORESEEROOMTEXT
+};
+
+export const SeeComplex = Template.bind({});
+SeeComplex.args = {
+    CardType: 'type05',
+    to: '',
+    title: MORESEECOMPLEXTEXT
+};
+
+export const ChkSeeRoom = Template.bind({});
+ChkSeeRoom.args = {
+    CardType: 'type05',
+    to: '/',
+    title: RECENTLYROOMTEXT
+};
+
+export const ChkSeeComplex = Template.bind({});
+ChkSeeComplex.args = {
+    CardType: 'type05',
+    to: '/',
+    title: RECENTLYCOMPLEXTEXT
 };
