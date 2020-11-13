@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { FormInput, Card } from 'components/UI';
+import { FormInput, Card } from 'components';
 import { CardProps } from '../../molecules/Card/index';
 
 export interface BoxesProps extends CardProps {

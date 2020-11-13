@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Label, Icon } from 'components/UI';
+import { Label, Icon } from 'components';
 import BgIcon from 'assets/images/search.svg';
 
 export interface FormInputProps {

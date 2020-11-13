@@ -2,7 +2,7 @@ import React from 'react';
 
 import logo from 'assets/images/logo.png';
 import * as S from './style';
-import { GNBType, ImgBtn } from 'components/UI';
+import { GNBType, ImgBtn } from 'components';
 import { HEADER1, HEADER2, HEADER3 } from 'utils/contents/String';
 
 export function Header(): React.ReactElement {

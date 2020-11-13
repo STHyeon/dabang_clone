@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { Icon, IconProps } from './index';
-import LogoSvg from '../../../../assets/images/logo.svg';
+import LogoSvg from 'assets/images/logo.svg';
 
 export default {
     title: 'Atoms/Icon'

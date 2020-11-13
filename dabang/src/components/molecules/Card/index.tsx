@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Img, Icon, EventDate } from 'components/UI';
+import { Img, Icon, EventDate } from 'components';
 import TabIcon from 'assets/images/tab.svg';
 import PlusIcon from 'assets/images/plus.svg';
 

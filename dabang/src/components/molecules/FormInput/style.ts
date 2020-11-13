@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Input, Btn, Icon } from 'components/UI';
+import { Input, Btn, Icon } from 'components';
 
 interface Props {
     invalid?: boolean;

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
 
-import { Card } from 'components/UI';
+import { Card } from 'components';
 import { CardProps } from '../../molecules/Card';
 
 export interface CardGridProps {

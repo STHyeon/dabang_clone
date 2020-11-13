@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import * as S from './style';
-import { GNBItem } from 'components/UI';
+import { GNBItem } from 'components';
 
 export interface GNBProps {
     GNBType?: string;

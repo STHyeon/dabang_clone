@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Btn, Img } from 'components/UI';
+import { Btn, Img } from 'components';
 
 export interface ImgBtnProps {
     src?: string; // 이미지 주소
