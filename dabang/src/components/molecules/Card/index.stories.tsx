@@ -23,8 +23,9 @@ Main.args = {
     CardType: 'type01',
     imgSrc: `${TestImg}`,
     to: '/',
-    title: 'test',
-    chkDate: Now
+    title: '메인',
+    chkDate: Now,
+    boxWidth: '580px'
 };
 
 export const Detail1 = Template.bind({});
@@ -39,13 +40,14 @@ Detail1.args = {
     imgSrc: `${TestImg}`,
     description1: '반지층, 라라라',
     description2: '밥밥지지츠츠',
-    chkDate: Now
+    chkDate: Now,
+    boxWidth: '216px'
 };
 
 export const Detail2 = Template.bind({});
 Detail2.args = {
     CardType: 'type03',
-    to: '',
+    to: '/',
     title: '강변',
     room: '오피스텔',
     roomInfo: '510세대',
@@ -53,7 +55,8 @@ Detail2.args = {
     imgSrc: `${TestImg}`,
     ableRoom: 4,
     complexData: true,
-    chkDate: Now
+    chkDate: Now,
+    boxWidth: '280px'
 };
 
 export const Detail3 = Template.bind({});
@@ -62,33 +65,38 @@ Detail3.args = {
     to: '/',
     imgSrc: `${TestImg}`,
     description1: '보증금',
-    description2: '5억'
+    description2: '5억',
+    boxWidth: '185px'
 };
 
 export const SeeRoom = Template.bind({});
 SeeRoom.args = {
     CardType: 'type05',
     to: '',
-    title: MORESEEROOMTEXT
+    noneTitle: MORESEEROOMTEXT,
+    boxWidth: '280px'
 };
 
 export const SeeComplex = Template.bind({});
 SeeComplex.args = {
     CardType: 'type05',
     to: '',
-    title: MORESEECOMPLEXTEXT
+    noneTitle: MORESEECOMPLEXTEXT,
+    boxWidth: '280px'
 };
 
 export const ChkSeeRoom = Template.bind({});
 ChkSeeRoom.args = {
     CardType: 'type05',
     to: '/',
-    title: RECENTLYROOMTEXT
+    noneTitle: RECENTLYROOMTEXT,
+    boxWidth: '280px'
 };
 
 export const ChkSeeComplex = Template.bind({});
 ChkSeeComplex.args = {
     CardType: 'type05',
     to: '/',
-    title: RECENTLYCOMPLEXTEXT
+    noneTitle: RECENTLYCOMPLEXTEXT,
+    boxWidth: '280px'
 };

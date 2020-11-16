@@ -2,59 +2,38 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 interface Props {
+    boxWidth?: string;
     imgHeight?: string;
     FlagValid?: boolean;
-    type1?: boolean;
-    type2?: boolean;
-    type3?: boolean;
-    type4?: boolean;
     styleroom?: boolean;
     hasLink?: boolean;
+    CardType?: string;
+    TitleType?: string; // 제목 유형 선택
 }
 
 export const CardWrapper = styled.div<Props>`
     position: relative;
 
-    ${(props) =>
-        props.type1 &&
-        css`
-            width: 580px;
-        `}
-
-    ${(props) =>
-        props.type2 &&
-        css`
-            width: 216px;
-        `}
-
-    ${(props) =>
-        props.type3 &&
-        css`
-            width: 280px;
-        `}
-
-    ${(props) =>
-        props.type4 &&
-        css`
-            width: 185px;
-        `}
+    /* width: ${(props) => (props.boxWidth ? props.boxWidth : '280px')}; */
+    /* width: ${(props) => props.boxWidth || '280px'}; */
+    width: ${(props) => props.boxWidth && props.boxWidth};
 `;
 
 export const SubWrapper = styled.div<Props>`
     ${(props) =>
-        props.type2 &&
+        props.CardType === 'type02' &&
         css`
             padding: 0 0 30px;
         `}
     
     ${(props) =>
-        props.type3 &&
+        props.CardType === 'type03' &&
         css`
             padding: 0 0 15px;
         `}
 
     ${(props) =>
-        props.type4 &&
+        props.CardType === 'type04' &&
         css`
             padding: 10px 14px;
             border: 1px solid #eeeeee;
@@ -70,13 +49,13 @@ export const ImgWrapper = styled.div<Props>`
     font-size: 0;
 
     ${(props) =>
-        props.type1 &&
+        props.CardType === 'type01' &&
         css`
             border-radius: 0;
         `}
 
     ${(props) =>
-        (props.type2 || props.type3) &&
+        (props.CardType === 'type02' || props.CardType === 'type03') &&
         css`
             margin: 0 0 10px;
         `}
@@ -119,7 +98,7 @@ export const DetailWrapper = styled.div<Props>`
     color: #666666;
 
     ${(props) =>
-        props.type4 &&
+        props.CardType === 'type04' &&
         css`
             font-size: 15px;
             color: #444444;
@@ -133,7 +112,7 @@ export const AndWrapper = styled.span`
 
 export const TitleWrapper = styled.div<Props>`
     ${(props) =>
-        props.type1 &&
+        props.CardType === 'type01' &&
         css`
             position: absolute;
             left: 20px;
@@ -143,14 +122,14 @@ export const TitleWrapper = styled.div<Props>`
         `}
 
     ${(props) =>
-        (props.type2 || props.type3) &&
+        (props.CardType === 'type02' || props.CardType === 'type03') &&
         css`
             margin: 0 0 6px;
             font-size: 18px;
         `}
 
     ${(props) =>
-        (props.type1 || props.type2) &&
+        (props.CardType === 'type01' || props.CardType === 'type02') &&
         css`
             font-weight: bold;
         `}
