@@ -10,3 +10,7 @@ export { Card } from './molecules/Card';
 export { FormInput } from './molecules/FormInput';
 export { GNBType } from './molecules/GNB';
 export { ImgBtn } from './molecules/ImgBtn';
+
+export { Header } from './organisms/Header';
+export { CardGrid } from './organisms/CardGrid';
+export { Boxes } from './organisms/Boxes';
