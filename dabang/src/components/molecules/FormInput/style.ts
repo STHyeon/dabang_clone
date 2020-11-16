@@ -9,15 +9,12 @@ interface Props {
     type02?: boolean;
 }
 
-export const FormInputContainer = styled.div`
-    height: 9rem;
-    display: flex;
-    flex-direction: column;
-`;
+export const FormInputContainer = styled.div``;
 
 export const FormInput = styled(Input)<Props>`
-    border: 0;
     width: calc(100% - 97px - 5px);
+    height: 42px;
+    border: 0;
 
     ${(props) =>
         props.type02 &&
@@ -31,7 +28,7 @@ export const FormBtn = styled(Btn)<Props>`
         props.type02 &&
         css`
             width: 97px;
-            height: 80%;
+            height: 34px;
             border-radius: 2px;
             line-height: 1.1;
         `}
@@ -45,6 +42,7 @@ export const FormCaption = styled.div<Props>`
 
 export const IncludeBtn = styled.div<Props>`
     position: relative;
+    height: 44px;
     border: 1px solid #d0d2d6;
 `;
 
