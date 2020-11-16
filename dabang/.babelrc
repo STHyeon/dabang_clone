@@ -1,0 +1,16 @@
+{
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [["babel-plugin-styled-components", { "ssr": true }]],
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [["babel-plugin-styled-components", { "ssr": true }]],
+    },
+    "test": {
+      "presets": ["env", "react"],
+      "plugins": [["babel-plugin-styled-components", { "displayName": true }]]
+    }
+  }
+}
