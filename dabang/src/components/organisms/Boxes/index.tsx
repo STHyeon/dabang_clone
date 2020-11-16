@@ -1,13 +1,12 @@
 import React from 'react';
 
 import * as S from './style';
-import { FormInput, Card } from 'components';
-import { CardProps } from '../../molecules/Card/index';
+import { FormInput } from 'components';
+import { CardProps } from '../../molecules/Card';
 
 export interface BoxesProps extends CardProps {
     BoxesType?: string; // 박스 유형 선택
-    CardType?: string; // 카드 유형 선택
-    to: string; // 이동 페이지
+    to?: string; // 이동 페이지
     ListText?: string;
     StrongListText?: string;
     ListDescription?: string;
@@ -30,7 +29,6 @@ export interface BoxesProps extends CardProps {
 
 export function Boxes({
     BoxesType,
-    CardType,
     ListText,
     StrongListText,
     ListDescription,
@@ -76,20 +74,6 @@ export function Boxes({
                         {ListText} <S.SideMainText>{StrongListText}</S.SideMainText>
                     </S.ListText>
                     <S.ListText type02>{ListDescription}</S.ListText>
-                    <S.ListData>
-                        <Card
-                            CardType={CardType}
-                            to={to}
-                            title={title}
-                            room={room}
-                            roomInfo={roomInfo}
-                            description1={description1}
-                            imgSrc={imgSrc}
-                            ableRoom={ableRoom}
-                            complexData={complexData}
-                            chkDate={chkDate}
-                        />
-                    </S.ListData>
                 </>
             )}
         </S.Container>

@@ -51,5 +51,3 @@ export const SideMainText = styled.div`
         border-left: 1px solid #c5c5c5;
     }
 `;
-
-export const ListData = styled.div``;

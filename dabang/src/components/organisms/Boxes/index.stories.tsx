@@ -29,8 +29,8 @@ MainBox.args = {
     ListDescription: ROOMDESCRIPTION
 };
 
-export const ListBox1 = Template2.bind({});
-ListBox1.args = {
+export const TextBox = Template2.bind({});
+TextBox.args = {
     BoxesType: 'type02',
     CardType: 'type03',
     ListText: SEECOMPLEX,
