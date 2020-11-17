@@ -63,6 +63,13 @@ export const BtnStyle = css<BtnStyleProps>`
         `}
 
     ${(props) =>
+        props.styletype === 'gray' &&
+        css`
+            color: #cccccc;
+            background: #515151;
+        `}
+
+    ${(props) =>
         props.styletype === 'transparent' &&
         css`
             color: #3f3f3f;

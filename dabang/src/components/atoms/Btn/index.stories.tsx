@@ -17,6 +17,7 @@ export default {
                     'danger',
                     'alert',
                     'success',
+                    'gray',
                     'transparent',
                     'transparent-border'
                 ]
@@ -53,6 +54,9 @@ const AllTemplate: Story<BtnProps> = (args) => (
             success
         </Btn>
         <Btn styletype="transparent" {...args}>
+            transparent
+        </Btn>
+        <Btn styletype="gray" {...args}>
             transparent
         </Btn>
         <Btn styletype="transparent-border" {...args}>
