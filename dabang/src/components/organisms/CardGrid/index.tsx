@@ -5,10 +5,12 @@ import { Card } from 'components';
 import { CardProps } from '../../molecules/Card';
 
 export interface CardGridProps {
-    data?: CardProps[];
+    data?: CardProps[]; // 카드 데이터
+    boxWidth?: string; // 카드 크기
+    cardImgHeight?: string; // 카드 이미지 크기
 }
 
-export function CardGrid({ data }: CardGridProps): React.ReactElement {
+export function CardGrid({ data, boxWidth, cardImgHeight }: CardGridProps): React.ReactElement {
     return (
         <>
             {data && (
@@ -32,7 +34,7 @@ export function CardGrid({ data }: CardGridProps): React.ReactElement {
                             ableRoom
                         } = CardData;
                         return (
-                            <S.GridItem>
+                            <S.GridItem boxWidth={boxWidth}>
                                 <Card
                                     key={index}
                                     CardType={CardType}
@@ -50,6 +52,7 @@ export function CardGrid({ data }: CardGridProps): React.ReactElement {
                                     alt={alt}
                                     complexData={complexData}
                                     ableRoom={ableRoom}
+                                    cardImgHeight={cardImgHeight}
                                 />
                             </S.GridItem>
                         );

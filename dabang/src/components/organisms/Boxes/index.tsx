@@ -31,21 +31,7 @@ export function Boxes({
     BoxesType,
     ListText,
     StrongListText,
-    ListDescription,
-    to,
-    title,
-    chkDate,
-    description1,
-    description2,
-    address,
-    room,
-    roomInfo,
-    FlagValid,
-    Flag,
-    imgSrc,
-    alt,
-    complexData,
-    ableRoom
+    ListDescription
 }: BoxesProps): React.ReactElement {
     return (
         <S.Container>

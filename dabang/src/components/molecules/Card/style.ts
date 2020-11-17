@@ -3,20 +3,17 @@ import { Link } from 'react-router-dom';
 
 interface Props {
     boxWidth?: string;
-    imgHeight?: string;
+    cardImgHeight?: string; // 이미지 크기
     FlagValid?: boolean;
     styleroom?: boolean;
     hasLink?: boolean;
     CardType?: string;
-    TitleType?: string; // 제목 유형 선택
 }
 
 export const CardWrapper = styled.div<Props>`
     position: relative;
-
-    /* width: ${(props) => (props.boxWidth ? props.boxWidth : '280px')}; */
-    /* width: ${(props) => props.boxWidth || '280px'}; */
     width: ${(props) => props.boxWidth && props.boxWidth};
+    text-align: left;
 `;
 
 export const SubWrapper = styled.div<Props>`
@@ -44,7 +41,7 @@ export const LinkWrapper = styled(Link)``;
 
 export const ImgWrapper = styled.div<Props>`
     width: 100%;
-    height: ${(props) => props.imgHeight};
+    height: ${(props) => props.cardImgHeight};
     border-radius: 10px 10px 0 0;
     font-size: 0;
 
@@ -158,7 +155,7 @@ export const AddressWrapper = styled.div`
 `;
 
 export const SeeWrapper = styled.div`
-    width: 280px;
+    /* width: 280px; */
     height: 186px;
     border: 1px dotted #d6d8db;
     background: #fbfbfc;

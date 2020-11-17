@@ -22,6 +22,7 @@ export interface CardProps {
     ableRoom?: number; // 거래가능한 방 개수
     complexData?: boolean; // 단지정보 on/off
     boxWidth?: string; // 박스 크기
+    cardImgHeight?: string; // 이미지 크기
 }
 
 export function Card({
@@ -42,15 +43,18 @@ export function Card({
     complexData,
     ableRoom,
     boxWidth,
+    cardImgHeight,
     ...props
 }: CardProps) {
     return (
         <S.CardWrapper CardType={CardType} boxWidth={boxWidth} {...props}>
             {to ? (
                 <S.LinkWrapper to="">
-                    <S.ImgWrapper>
-                        <Img src={imgSrc} alt={alt} />
-                    </S.ImgWrapper>
+                    {imgSrc && (
+                        <S.ImgWrapper cardImgHeight={cardImgHeight}>
+                            <Img src={imgSrc} alt={alt} />
+                        </S.ImgWrapper>
+                    )}
 
                     {(FlagValid || Flag) && (
                         <S.FlagWrapper>

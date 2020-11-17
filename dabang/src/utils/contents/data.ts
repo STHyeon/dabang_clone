@@ -2,7 +2,7 @@ import TestImg from 'assets/images/test.png';
 
 const Now = new Date();
 
-export const Type01CardData = [
+export const Type02CardData = [
     {
         CardType: 'type02',
         title: 'test',
@@ -41,5 +41,82 @@ export const Type01CardData = [
         description1: '반지층, 라라라',
         description2: '밥밥지지츠츠',
         chkDate: Now
+    }
+];
+
+export const Type03CardData = [
+    {
+        CardType: 'type03',
+        to: '/',
+        title: '강변',
+        room: '오피스텔',
+        roomInfo: '510세대',
+        description1: 'ㅁㅁㅁㅁ',
+        imgSrc: `${TestImg}`,
+        ableRoom: 4,
+        complexData: true,
+        chkDate: Now
+    },
+    {
+        CardType: 'type03',
+        to: '/',
+        title: '강변',
+        room: '오피스텔',
+        roomInfo: '510세대',
+        description1: 'ㅁㅁㅁㅁ',
+        imgSrc: `${TestImg}`,
+        ableRoom: 4,
+        complexData: true,
+        chkDate: Now
+    },
+    {
+        CardType: 'type03',
+        to: '/',
+        title: '강변',
+        room: '오피스텔',
+        roomInfo: '510세대',
+        description1: 'ㅁㅁㅁㅁ',
+        imgSrc: `${TestImg}`,
+        ableRoom: 4,
+        complexData: true,
+        chkDate: Now
+    }
+];
+
+export const Type04CardData = [
+    {
+        CardType: 'type04',
+        to: '/',
+        imgSrc: `${TestImg}`,
+        description1: '보증금',
+        description2: '5억'
+    },
+    {
+        CardType: 'type04',
+        to: '/',
+        imgSrc: `${TestImg}`,
+        description1: '보증금',
+        description2: '5억'
+    },
+    {
+        CardType: 'type04',
+        to: '/',
+        imgSrc: `${TestImg}`,
+        description1: '보증금',
+        description2: '5억'
+    },
+    {
+        CardType: 'type04',
+        to: '/',
+        imgSrc: `${TestImg}`,
+        description1: '보증금',
+        description2: '5억'
+    },
+    {
+        CardType: 'type04',
+        to: '/',
+        imgSrc: `${TestImg}`,
+        description1: '보증금',
+        description2: '5억'
     }
 ];

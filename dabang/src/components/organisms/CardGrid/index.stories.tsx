@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { CardGrid, CardGridProps } from './index';
-import { Type01CardData } from 'utils/contents/data';
+import { Type02CardData } from 'utils/contents/data';
 
 export default {
     title: 'Organisms/CardGrid'
@@ -11,4 +11,4 @@ export default {
 const Template: Story<CardGridProps> = (args) => <CardGrid {...args} />;
 
 export const general = Template.bind({});
-general.args = { data: Type01CardData };
+general.args = { data: Type02CardData, boxWidth: '27%' };

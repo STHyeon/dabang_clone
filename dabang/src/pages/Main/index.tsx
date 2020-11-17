@@ -5,14 +5,17 @@ import { BaseTemplate } from '../../templates';
 import { Boxes, CardGrid, Card } from '../../components';
 import {
     SEEROOM,
-    SEECOMPLEX,
-    ROOMDESCRIPTION,
     LOVEROOM,
+    ROOMDESCRIPTION,
+    RECENTLYROOMTEXT,
+    SEECOMPLEX,
     LOVECOMPLEX,
     COMPLEXDESCRIPTION,
-    RECENTLYROOMTEXT
+    RECENTLYCOMPLEXTEXT,
+    EASYFINDTXT,
+    EASYFINDDESCRIPTION
 } from 'utils/contents/String';
-import { Type01CardData } from 'utils/contents/data';
+import { Type02CardData, Type03CardData, Type04CardData } from 'utils/contents/data';
 
 export function Main() {
     return (
@@ -20,7 +23,20 @@ export function Main() {
             <S.Part type01>
                 <Boxes BoxesType="type01" />
             </S.Part>
+
             <S.Part type02>
+                <Boxes
+                    BoxesType="type02"
+                    ListText={EASYFINDTXT}
+                    ListDescription={EASYFINDDESCRIPTION}
+                />
+                <CardGrid data={Type04CardData} boxWidth="15.7%" cardImgHeight="100px" />
+                <S.LastBox>
+                    <Card CardType="type04" to="/" noneTitle={RECENTLYROOMTEXT} />
+                </S.LastBox>
+            </S.Part>
+
+            <S.Part type03>
                 <S.BoxWrap>
                     <Boxes
                         BoxesType="type02"
@@ -28,27 +44,22 @@ export function Main() {
                         StrongListText={LOVEROOM}
                         ListDescription={ROOMDESCRIPTION}
                     />
-                    <CardGrid data={Type01CardData} />
+                    <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight="186px" />
                     <S.LastBox>
-                        <Card
-                            CardType="type05"
-                            to="/"
-                            noneTitle={RECENTLYROOMTEXT}
-                            boxWidth="27%"
-                        />
+                        <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />
                     </S.LastBox>
                 </S.BoxWrap>
 
                 <S.BoxWrap>
                     <Boxes
                         BoxesType="type02"
-                        ListText={SEEROOM}
-                        StrongListText={LOVEROOM}
-                        ListDescription={ROOMDESCRIPTION}
+                        ListText={SEECOMPLEX}
+                        StrongListText={LOVECOMPLEX}
+                        ListDescription={COMPLEXDESCRIPTION}
                     />
-                    <CardGrid data={Type01CardData} />
+                    <CardGrid data={Type03CardData} boxWidth="23.5%" cardImgHeight="186px" />
                     <S.LastBox>
-                        <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />
+                        <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />
                     </S.LastBox>
                 </S.BoxWrap>
             </S.Part>
