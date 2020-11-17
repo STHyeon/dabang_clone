@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Header, Boxes, CardGrid } from 'components';
+import { Header, Footer } from 'components';
 
 export interface BaseProps {
     children: React.ReactNode;
@@ -13,7 +13,8 @@ export function BaseTemplate({ children }: BaseProps): React.ReactElement {
             <S.HeaderWrap>
                 <Header />
             </S.HeaderWrap>
-            <S.BaseWrap>{children}</S.BaseWrap>
+            <S.BaseWrap className="inner">{children}</S.BaseWrap>
+            <Footer />
         </>
     );
 }
