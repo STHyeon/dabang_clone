@@ -2,28 +2,31 @@ import styled, { css } from 'styled-components';
 
 interface ContainerProps {
     active?: boolean;
-    type01?: boolean;
-    type02?: boolean;
-    type03?: boolean;
+    GNBType?: string;
+    itemWidth?: string;
+    fontColor?: string;
+    fontSize?: string;
+    hoverColor?: string;
 }
 
 export const Container = styled.div<ContainerProps>`
     position: relative;
     transition: color ease 0.2s;
+    width:${(props) => (props.itemWidth ? props.itemWidth : 'auto')};
     user-select: none;
     cursor: pointer;
     text-align: center;
 
     &:hover {
-        color: #1564f9;
+        color: ${(props) => (props.hoverColor ? props.hoverColor : '#1564f9')} 
     }
 
     ${(props) =>
-        props.type01 &&
+        props.GNBType === 'type01' &&
         css`
             padding: 0 12px 0 16px;
-            font-size: 13px;
-            color: #888888;
+            font-size: ${props.fontSize ? props.fontSize : '13px'};
+            color: ${props.fontColor ? props.fontColor : '#888888'};
 
             & + div {
                 &::after {
@@ -39,19 +42,19 @@ export const Container = styled.div<ContainerProps>`
         `}
 
     ${(props) =>
-        props.type02 &&
+        props.GNBType === 'type02' &&
         css`
             padding: 0 17px;
-            font-size: 15px;
-            color: #222222;
+            font-size: ${props.fontSize ? props.fontSize : '15px'};
+            color: ${props.fontColor ? props.fontColor : '#222222'};
         `}
 
     ${(props) =>
-        props.type03 &&
+        props.GNBType === 'type03' &&
         css`
             padding: 0 5px 0 8px;
-            font-size: 13px;
-            color: #888888;
+            font-size: ${props.fontSize ? props.fontSize : '13px'};
+            color: ${props.fontColor ? props.fontColor : '#888888'};
 
             & + div {
                 &::after {
@@ -60,14 +63,14 @@ export const Container = styled.div<ContainerProps>`
                     top: 0;
                     left: 0;
                     content: '·';
-                    color: #888888;
+                    color: ${props.fontColor ? props.fontColor : '#888888'};
                 }
             }
         `}
         
-        ${(props) =>
-            props.active &&
-            css`
-                color: #1564f9;
-            `}
+    ${(props) =>
+        props.active &&
+        css`
+            color: #1564f9;
+        `}
 `;

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { GNBType, GNBProps } from './index';
+import { GNB, GNBProps } from './index';
 
 export default {
     title: 'Molecules/GNB'
 } as Meta;
 
-const Template1: Story<GNBProps> = (args) => <GNBType {...args} />;
-const Template2: Story<GNBProps> = (args) => <GNBType {...args} />;
-const Template3: Story<GNBProps> = (args) => <GNBType {...args} />;
+const Template1: Story<GNBProps> = (args) => <GNB {...args} />;
+const Template2: Story<GNBProps> = (args) => <GNB {...args} />;
+const Template3: Story<GNBProps> = (args) => <GNB {...args} />;
 
 export const AfterBar = Template1.bind({});
 AfterBar.args = {

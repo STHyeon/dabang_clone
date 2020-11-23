@@ -8,7 +8,7 @@ export { GNBItem } from './atoms/GNBItem';
 
 export { Card } from './molecules/Card';
 export { FormInput } from './molecules/FormInput';
-export { GNBType } from './molecules/GNB';
+export { GNB } from './molecules/GNB';
 export { ImgBtn } from './molecules/ImgBtn';
 
 export { Header } from './organisms/Header';

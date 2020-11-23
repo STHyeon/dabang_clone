@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { GNB, ImgBtn } from 'components';
+
 interface Props {
     fl_l?: boolean;
     fl_r?: boolean;

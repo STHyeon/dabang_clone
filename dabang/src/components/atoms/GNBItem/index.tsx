@@ -4,9 +4,10 @@ import * as S from './style';
 export interface GNBItemProps {
     children?: string | React.ReactElement;
     active?: boolean;
-    type01?: boolean; // 탭 유형1
-    type02?: boolean; // 탭 유형2
-    type03?: boolean; // 탭 유형3
+    GNBType?: string;
+    fontColor?: string;
+    fontSize?: string;
+    hoverColor?: string;
     onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
