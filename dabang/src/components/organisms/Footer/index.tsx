@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './style';
 import { Img } from 'components/atoms/Img';
 import KS from 'assets/images/k55qi.png';
-import { FOOTERDETAIL, PROUDTXT, Footer1 } from 'utils/contents/String';
+import { FOOTERDETAIL, PROUDTXT, Footer1 } from 'utils/contents/string';
 
 export function Footer(): React.ReactElement {
     return (

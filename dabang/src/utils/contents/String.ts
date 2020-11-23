@@ -1,14 +1,9 @@
+//header
 export const HEADER1 = ['프로중개사 사이트', '다방허브 사이트'];
 export const HEADER2 = ['방찾기', '분양', '관심목록', '방내놓기', '알림'];
 export const HEADER3 = ['회원가입 · 로그인'];
-export const Footer1 = [
-    '회사소개',
-    '이용약관',
-    '개인정보처리방침',
-    '매물관리규정',
-    '자동저장서비스'
-];
 
+// main
 export const SEEROOM = '최근 본 방';
 export const LOVEROOM = '찜한 방';
 export const ROOMDESCRIPTION = '최근에 본 방과 찜한 방을 볼 수 있어요';
@@ -23,6 +18,19 @@ export const RECENTLYCOMPLEXTEXT = '최근 본 지역의 다른 단지를 찾아
 
 export const EASYFINDTXT = '쉬운 방찾기';
 export const EASYFINDDESCRIPTION = '방 찾기 초보를 위한 초간단 솔루션!';
+
+//love
+export const LOVEMENU = ['최근 본 방', '찜한 방', '문의한 방', '최근 본 단지', '찜한 단지'];
+
+// footer
+export const Footer1 = [
+    '회사소개',
+    '이용약관',
+    '개인정보처리방침',
+    '매물관리규정',
+    '자동저장서비스'
+];
+
 export const FOOTERDETAIL =
     '<div>(주)스테이션</div>' +
     '<div>대표: 한유순, 유형석</div>' +

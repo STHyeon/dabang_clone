@@ -14,7 +14,7 @@ import {
     RECENTLYCOMPLEXTEXT,
     EASYFINDTXT,
     EASYFINDDESCRIPTION
-} from 'utils/contents/String';
+} from 'utils/contents/string';
 import { Type02CardData, Type03CardData, Type04CardData } from 'utils/contents/data';
 
 export function Main() {

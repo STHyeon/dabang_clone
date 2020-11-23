@@ -10,7 +10,7 @@ import {
     LOVEROOM,
     LOVECOMPLEX,
     COMPLEXDESCRIPTION
-} from 'utils/contents/String';
+} from 'utils/contents/string';
 
 export default {
     title: 'Organisms/Boxes',

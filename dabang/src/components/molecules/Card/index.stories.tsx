@@ -9,7 +9,7 @@ import {
     RECENTLYCOMPLEXTEXT,
     MORESEEROOMTEXT,
     RECENTLYROOMTEXT
-} from 'utils/contents/String';
+} from 'utils/contents/string';
 
 export default {
     title: 'Molecules/Card'
