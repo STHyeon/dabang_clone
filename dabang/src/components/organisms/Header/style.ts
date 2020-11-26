@@ -10,7 +10,6 @@ interface Props {
 export const Container = styled.div`
     width: 100%;
     height: 70px;
-    margin: 0 0 10px;
     border-bottom: 1px solid #ebebeb;
     line-height: 70px;
 `;

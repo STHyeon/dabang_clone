@@ -34,9 +34,8 @@ export function CardGrid({ data, boxWidth, cardImgHeight }: CardGridProps): Reac
                             ableRoom
                         } = CardData;
                         return (
-                            <S.GridItem boxWidth={boxWidth}>
+                            <S.GridItem boxWidth={boxWidth} key={index}>
                                 <Card
-                                    key={index}
                                     CardType={CardType}
                                     to={to}
                                     title={title}

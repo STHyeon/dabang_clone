@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const LoveTitle = styled.div`
     margin: 70px 0 45px;

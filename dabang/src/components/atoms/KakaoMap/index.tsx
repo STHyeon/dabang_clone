@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 import * as S from './style';
 declare const kakao: any; // for using kakao map sdk
-// const { kakao }: any = window;
 
 export interface KakaoMapProps {
     latitude: number;

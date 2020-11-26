@@ -1,5 +1,4 @@
 import React from 'react';
-// 62882060001
 import { BaseTemplate } from '../../templates';
 import { GNB, CardGrid } from 'components';
 import { LOVEMENU } from 'utils/contents/string';
