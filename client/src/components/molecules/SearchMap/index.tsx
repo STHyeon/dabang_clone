@@ -23,10 +23,8 @@ export function SearchMap({ address }: SearchMapProps): React.ReactElement {
 
     useEffect(() => {
         var geocoder = new kakao.maps.services.Geocoder();
-        // console.log(address);
 
         geocoder.addressSearch(address, function (result: CoordinateProps, status: string) {
-            // console.log(status, result);
             if (status === kakao.maps.services.Status.OK) {
                 setLocation({ latitude: Number(result[0].y), longitude: Number(result[0].x) });
             }

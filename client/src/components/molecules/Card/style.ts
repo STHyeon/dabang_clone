@@ -10,7 +10,7 @@ interface Props {
     CardType?: string;
 }
 
-export const CardWrapper = styled.div<Props>`
+export const CardWrapper = styled.li<Props>`
     position: relative;
     width: ${(props) => props.boxWidth && props.boxWidth};
     text-align: left;

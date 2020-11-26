@@ -12,7 +12,7 @@ export interface CardGridProps {
 
 export function CardGrid({ data, boxWidth, cardImgHeight }: CardGridProps): React.ReactElement {
     return (
-        <>
+        <S.GridItem boxWidth={boxWidth}>
             {data && (
                 <>
                     {data.map((CardData: CardProps, index: number) => {
@@ -34,30 +34,29 @@ export function CardGrid({ data, boxWidth, cardImgHeight }: CardGridProps): Reac
                             ableRoom
                         } = CardData;
                         return (
-                            <S.GridItem boxWidth={boxWidth} key={index}>
-                                <Card
-                                    CardType={CardType}
-                                    to={to}
-                                    title={title}
-                                    chkDate={chkDate}
-                                    description1={description1}
-                                    description2={description2}
-                                    address={address}
-                                    room={room}
-                                    roomInfo={roomInfo}
-                                    FlagValid={FlagValid}
-                                    Flag={Flag}
-                                    imgSrc={imgSrc}
-                                    alt={alt}
-                                    complexData={complexData}
-                                    ableRoom={ableRoom}
-                                    cardImgHeight={cardImgHeight}
-                                />
-                            </S.GridItem>
+                            <Card
+                                key={index}
+                                CardType={CardType}
+                                to={to}
+                                title={title}
+                                chkDate={chkDate}
+                                description1={description1}
+                                description2={description2}
+                                address={address}
+                                room={room}
+                                roomInfo={roomInfo}
+                                FlagValid={FlagValid}
+                                Flag={Flag}
+                                imgSrc={imgSrc}
+                                alt={alt}
+                                complexData={complexData}
+                                ableRoom={ableRoom}
+                                cardImgHeight={cardImgHeight}
+                            />
                         );
                     })}
                 </>
             )}
-        </>
+        </S.GridItem>
     );
 }

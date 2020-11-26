@@ -10,16 +10,16 @@ export interface BaseProps {
 
 export function BaseTemplate({ full, children }: BaseProps): React.ReactElement {
     return (
-        <>
+        <S.Container>
             <S.HeaderWrap>
                 <Header />
             </S.HeaderWrap>
             {full ? (
-                <S.BaseWrap>{children}</S.BaseWrap>
+                <S.BaseWrap full>{children}</S.BaseWrap>
             ) : (
                 <S.BaseWrap className="inner">{children}</S.BaseWrap>
             )}
             <Footer />
-        </>
+        </S.Container>
     );
 }

@@ -11,7 +11,7 @@ export interface KakaoMapProps {
 export function KakaoMap({
     latitude,
     longitude,
-    height = '28rem'
+    height = '100%'
 }: KakaoMapProps): React.ReactElement {
     const kakaoMapRef = useRef<HTMLDivElement>(null);
 

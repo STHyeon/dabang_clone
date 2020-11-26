@@ -14,3 +14,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 @include font-face('Wemakeprice', 'Wemakeprice/Wemakeprice-Bold');
+
+#root {
+    width: 100%;
+    height: 100%;
+}
