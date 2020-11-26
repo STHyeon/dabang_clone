@@ -11,7 +11,6 @@ export { Card } from './molecules/Card';
 export { FormInput } from './molecules/FormInput';
 export { GNB } from './molecules/GNB';
 export { ImgBtn } from './molecules/ImgBtn';
-export { SearchMap } from './molecules/SearchMap';
 
 export { Header } from './organisms/Header';
 export { Footer } from './organisms/Footer';
