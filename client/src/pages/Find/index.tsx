@@ -22,21 +22,23 @@ export function Find() {
                     inputHeight="64px"
                 />
             </S.AddressBox>
-            <div className="clearfix">
+            <S.Container className="clearfix">
                 <S.FindRoomBox className="fl_l">
                     <S.TotalRoom>
                         전체 방 <span>111</span>개
                     </S.TotalRoom>
-                    <CardGrid
-                        data={Type02CardData}
-                        boxWidth="calc(50% - 16px);"
-                        cardImgHeight="100px"
-                    />
+                    <S.RoomBox>
+                        <CardGrid
+                            data={Type02CardData}
+                            boxWidth="calc(50% - 16px);"
+                            cardImgHeight="100px"
+                        />
+                    </S.RoomBox>
                 </S.FindRoomBox>
                 <S.MapBox className="fl_r">
                     <SearchMap address={keyword} />
                 </S.MapBox>
-            </div>
+            </S.Container>
         </BaseTemplate>
     );
 }
