@@ -35,4 +35,8 @@ export const RecDataNum = styled.span`
 
 export const CardGridBox = styled.div`
     padding: 0 0 80px;
+
+    li + li {
+        margin: 0 0 0 20px;
+    }
 `;

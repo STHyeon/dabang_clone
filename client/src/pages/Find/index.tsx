@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BaseTemplate } from '../../templates';
-import { Input, SearchMap, CardGrid } from 'components';
-import { LOVEMENU } from 'utils/contents/string';
+import { Input, KakaoMap, CardGrid } from 'components';
 import { Type02CardData } from 'utils/contents/data';
 import * as S from './style';
 
@@ -36,7 +35,7 @@ export function Find() {
                     </S.RoomBox>
                 </S.FindRoomBox>
                 <S.MapBox className="fl_r">
-                    <SearchMap address={keyword} />
+                    <KakaoMap address={keyword} />
                 </S.MapBox>
             </S.Container>
         </BaseTemplate>

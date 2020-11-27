@@ -31,15 +31,24 @@ export const Part = styled.div<Props>`
         `}
 `;
 
-export const LastBox = styled.div<Props>`
-    display: inline-block;
-    width: 23.5%;
-    margin: 0 0 0 20px;
-    vertical-align: top;
-`;
-
 export const BoxWrap = styled.div`
     & + & {
         padding: 80px 0 0;
+    }
+`;
+
+export const CardBox = styled.div<Props>`
+    li + li {
+        ${(props) =>
+            props.type02 &&
+            css`
+                margin: 0 0 0 14px;
+            `}
+
+        ${(props) =>
+            props.type03 &&
+            css`
+                margin: 0 0 0 20px;
+            `}
     }
 `;

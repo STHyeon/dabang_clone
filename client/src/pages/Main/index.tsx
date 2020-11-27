@@ -2,16 +2,14 @@ import React from 'react';
 import * as S from './style';
 
 import { BaseTemplate } from '../../templates';
-import { Boxes, CardGrid, Card } from '../../components';
+import { Boxes, CardGrid } from '../../components';
 import {
     SEEROOM,
     LOVEROOM,
     ROOMDESCRIPTION,
-    RECENTLYROOMTEXT,
     SEECOMPLEX,
     LOVECOMPLEX,
     COMPLEXDESCRIPTION,
-    RECENTLYCOMPLEXTEXT,
     EASYFINDTXT,
     EASYFINDDESCRIPTION
 } from 'utils/contents/string';
@@ -30,10 +28,9 @@ export function Main() {
                     ListText={EASYFINDTXT}
                     ListDescription={EASYFINDDESCRIPTION}
                 />
-                <CardGrid data={Type04CardData} boxWidth="15.7%" cardImgHeight="100px" />
-                <S.LastBox>
-                    <Card CardType="type04" to="/" noneTitle={RECENTLYROOMTEXT} />
-                </S.LastBox>
+                <S.CardBox type02>
+                    <CardGrid data={Type04CardData} boxWidth="15.7%" cardImgHeight="100px" />
+                </S.CardBox>
             </S.Part>
 
             <S.Part type03>
@@ -44,10 +41,14 @@ export function Main() {
                         StrongListText={LOVEROOM}
                         ListDescription={ROOMDESCRIPTION}
                     />
-                    <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight="186px" />
-                    <S.LastBox>
-                        <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />
-                    </S.LastBox>
+                    <S.CardBox type03>
+                        <CardGrid
+                            data={Type02CardData}
+                            boxWidth="23.5%"
+                            cardImgHeight="186px"
+                            cardGroup="room"
+                        />
+                    </S.CardBox>
                 </S.BoxWrap>
 
                 <S.BoxWrap>
@@ -57,10 +58,14 @@ export function Main() {
                         StrongListText={LOVECOMPLEX}
                         ListDescription={COMPLEXDESCRIPTION}
                     />
-                    <CardGrid data={Type03CardData} boxWidth="23.5%" cardImgHeight="186px" />
-                    <S.LastBox>
-                        <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />
-                    </S.LastBox>
+                    <S.CardBox type03>
+                        <CardGrid
+                            data={Type03CardData}
+                            boxWidth="23.5%"
+                            cardImgHeight="186px"
+                            cardGroup="complex"
+                        />
+                    </S.CardBox>
                 </S.BoxWrap>
             </S.Part>
         </BaseTemplate>

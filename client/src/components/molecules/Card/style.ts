@@ -8,12 +8,19 @@ interface Props {
     styleroom?: boolean;
     hasLink?: boolean;
     CardType?: string;
+    borderColor?: string;
 }
 
 export const CardWrapper = styled.li<Props>`
     position: relative;
     width: ${(props) => props.boxWidth && props.boxWidth};
     text-align: left;
+
+    ${(props) =>
+        props.CardType === 'type05' &&
+        css`
+            vertical-align: top;
+        `}
 `;
 
 export const SubWrapper = styled.div<Props>`

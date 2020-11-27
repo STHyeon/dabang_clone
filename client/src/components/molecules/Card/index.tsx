@@ -90,7 +90,7 @@ export function Card({
                     )}
 
                     {(description1 || description2) && (
-                        <S.SubWrapper>
+                        <S.SubWrapper CardType={CardType}>
                             {description1 && <S.DetailWrapper>{description1}</S.DetailWrapper>}
                             {description2 && <S.DetailWrapper> {description2}</S.DetailWrapper>}
                         </S.SubWrapper>
@@ -119,7 +119,7 @@ export function Card({
                         <S.SeeWrapper>
                             <S.SeeText hasLink>{noneTitle}</S.SeeText>
                             <svg width="35" height="35" viewBox="0 0 35 35">
-                                <g fill="none" fill-rule="evenodd">
+                                <g fill="none" fillRule="evenodd">
                                     <circle cx="17.5" cy="17.5" r="17.5" fill="#3185F8"></circle>
                                     <g fill="#FFF">
                                         <path d="M10 17h15v1H10z"></path>
