@@ -29,7 +29,7 @@ input[type=email],
 input[type=tel],
 input[type=number],
 input[type=file],
-textarea{margin: 0; padding: 0 15px; width: 100%; height: 44px; box-sizing: border-box; background-color: #fff; border: 1px solid #dddfe1; font-weight: 300; font-size: 0.9375rem; letter-spacing: -0.025em;
+textarea{padding: 0 15px; box-sizing: border-box; background-color: #fff; font-weight: 300; font-size: 0.9375rem; letter-spacing: -0.025em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;}
