@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Btn, Img } from 'components';
+import { Img } from 'components';
 
 export interface ImgBtnProps {
     src?: string; // 이미지 주소
@@ -9,6 +9,7 @@ export interface ImgBtnProps {
     to?: string; // 외부 링크
     href?: string; // 외부 링크
     styletype?: string; // 버튼 타입
+    onClick?: () => void;
 }
 
 export function ImgBtn({
@@ -16,13 +17,12 @@ export function ImgBtn({
     alt,
     to,
     href,
-    styletype = 'transparent'
+    styletype = 'transparent',
+    onClick
 }: ImgBtnProps): React.ReactElement {
     return (
-        <S.ImgBtnWrapper>
-            <Btn to={to} href={href} styletype={styletype}>
-                <Img src={src} alt={alt} />
-            </Btn>
+        <S.ImgBtnWrapper to={to} href={href} styletype={styletype} onClick={onClick}>
+            <Img src={src} alt={alt} />
         </S.ImgBtnWrapper>
     );
 }

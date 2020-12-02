@@ -8,7 +8,7 @@ export interface GNBItemProps {
     fontColor?: string;
     fontSize?: string;
     hoverColor?: string;
-    onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClick?: (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 }
 
 export function GNBItem({
@@ -22,7 +22,7 @@ export function GNBItem({
     return (
         <S.Container
             active={isActive}
-            onClick={(event) => {
+            onClick={(event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
                 onClick && onClick(event);
                 !isActive && setIsActive(true);
             }}

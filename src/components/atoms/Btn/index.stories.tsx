@@ -12,6 +12,7 @@ export default {
             control: {
                 type: 'select',
                 options: [
+                    'none',
                     'primary',
                     'secondary',
                     'danger',
@@ -57,10 +58,13 @@ const AllTemplate: Story<BtnProps> = (args) => (
             transparent
         </Btn>
         <Btn styletype="gray" {...args}>
-            transparent
+            gray
         </Btn>
         <Btn styletype="transparent-border" {...args}>
             transparent-border
+        </Btn>
+        <Btn styletype="none" {...args}>
+            none
         </Btn>
     </div>
 );

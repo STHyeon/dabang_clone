@@ -7,24 +7,28 @@ export default {
     title: 'Molecules/GNB'
 } as Meta;
 
-const Template1: Story<GNBProps> = (args) => <GNB {...args} />;
-const Template2: Story<GNBProps> = (args) => <GNB {...args} />;
-const Template3: Story<GNBProps> = (args) => <GNB {...args} />;
+const Template: Story<GNBProps> = (args) => <GNB {...args} />;
 
-export const AfterBar = Template1.bind({});
+export const AfterBar = Template.bind({});
 AfterBar.args = {
     GNBType: 'type01',
     items: ['a', 'b', 'c', 'd', 'e']
 };
 
-export const AfterNone = Template2.bind({});
+export const AfterNone = Template.bind({});
 AfterNone.args = {
     GNBType: 'type02',
     items: ['a', 'b', 'c', 'd', 'e']
 };
 
-export const AfterComma = Template3.bind({});
+export const AfterComma = Template.bind({});
 AfterComma.args = {
     GNBType: 'type03',
+    items: ['a', 'b', 'c', 'd', 'e']
+};
+
+export const Default = Template.bind({});
+Default.args = {
+    GNBType: 'type04',
     items: ['a', 'b', 'c', 'd', 'e']
 };

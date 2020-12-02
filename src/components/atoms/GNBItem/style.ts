@@ -9,7 +9,7 @@ interface ContainerProps {
     hoverColor?: string;
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.li<ContainerProps>`
     position: relative;
     transition: color ease 0.2s;
     width:${(props) => (props.itemWidth ? props.itemWidth : 'auto')};
@@ -20,6 +20,12 @@ export const Container = styled.div<ContainerProps>`
     &:hover {
         color: ${(props) => (props.hoverColor ? props.hoverColor : '#1564f9')} 
     }
+
+    ${(props) =>
+        props.active &&
+        css`
+            color: #1564f9;
+        `}
 
     ${(props) =>
         props.GNBType === 'type01' &&
@@ -67,10 +73,16 @@ export const Container = styled.div<ContainerProps>`
                 }
             }
         `}
-        
+
     ${(props) =>
-        props.active &&
+        props.GNBType === 'type04' &&
         css`
-            color: #1564f9;
+            font-size: ${props.fontSize ? props.fontSize : '16px'};
+            color: ${props.fontColor ? props.fontColor : '#000000'};
+
+            &:hover {
+                color: initial;
+            }
         `}
+    
 `;
