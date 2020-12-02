@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from 'utils/style/media';
 
 interface Props {
     type01?: boolean;
@@ -14,20 +15,20 @@ export const Part = styled.div<Props>`
     ${(props) =>
         props.type01 &&
         css`
-            padding: 115px 0 113px;
+            padding: 115px 16px 113px;
         `}
 
     ${(props) =>
         props.type02 &&
         css`
-            padding: 36px 0 70px;
+            padding: 36px 16px 70px;
             text-align: center;
         `}
 
     ${(props) =>
         props.type03 &&
         css`
-            padding: 80px 0 185px;
+            padding: 80px 16px 185px;
         `}
 `;
 
@@ -38,7 +39,7 @@ export const BoxWrap = styled.div`
 `;
 
 export const CardBox = styled.div<Props>`
-    li + li {
+    /* li + li {
         ${(props) =>
             props.type02 &&
             css`
@@ -50,5 +51,5 @@ export const CardBox = styled.div<Props>`
             css`
                 margin: 0 0 0 20px;
             `}
-    }
+    } */
 `;

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import { device } from 'utils/style/media';
 import { Input, Btn, Icon } from 'components';
 
 interface Props {
@@ -20,6 +20,10 @@ export const FormInput = styled(Input)<Props>`
         props.type02 &&
         css`
             width: calc(100% - 51px - 97px - 5px);
+
+            @media ${device.mb} {
+                width: calc(100% - 51px - 65px - 5px);
+            }
         `}
 `;
 
@@ -31,6 +35,11 @@ export const FormBtn = styled(Btn)<Props>`
             height: 34px;
             border-radius: 2px;
             line-height: 1.1;
+
+            @media ${device.mb} {
+                width: 65px;
+                font-size: 13px;
+            }
         `}
 `;
 
