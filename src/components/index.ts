@@ -16,3 +16,4 @@ export { Header } from './organisms/Header';
 export { Footer } from './organisms/Footer';
 export { CardGrid } from './organisms/CardGrid';
 export { Boxes } from './organisms/Boxes';
+export { Slick } from './organisms/Slider';

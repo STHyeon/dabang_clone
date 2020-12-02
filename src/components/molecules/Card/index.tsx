@@ -22,7 +22,7 @@ export interface CardProps {
     ableRoom?: number; // 거래가능한 방 개수
     complexData?: boolean; // 단지정보 on/off
     boxWidth?: string; // 박스 크기
-    cardImgHeight?: string; // 이미지 크기
+    cardImgHeight?: number; // 이미지 크기
 }
 
 export function Card({

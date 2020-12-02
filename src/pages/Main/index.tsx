@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './style';
 
-import { BaseTemplate } from '../../templates';
-import { Boxes, CardGrid } from '../../components';
+import { BaseTemplate } from 'templates';
+import { Boxes, CardGrid, Slick } from 'components';
 import {
     SEEROOM,
     LOVEROOM,
@@ -29,7 +29,13 @@ export function Main() {
                     ListDescription={EASYFINDDESCRIPTION}
                 />
                 <S.CardBox type02>
-                    <CardGrid data={Type04CardData} boxWidth="15.7%" cardImgHeight="100px" />
+                    <Slick
+                        data={Type04CardData}
+                        boxWidth={185}
+                        cardImgHeight={100}
+                        slidesToScroll={5}
+                        slidesToShow={5}
+                    />
                 </S.CardBox>
             </S.Part>
 

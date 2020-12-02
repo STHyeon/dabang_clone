@@ -14,7 +14,7 @@ export function Btn({
     children,
     to,
     href,
-    styletype = 'primary',
+    styletype = 'none',
     ...props
 }: BtnProps): React.ReactElement {
     if (to) {

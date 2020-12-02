@@ -28,6 +28,12 @@ export const BtnStyle = css<BtnStyleProps>`
     }
 
     ${(props) =>
+        props.styletype === 'none' &&
+        css`
+            color: #ffffff;
+        `}
+
+    ${(props) =>
         props.styletype === 'primary' &&
         css`
             color: #ffffff;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface Props {
     boxWidth?: string;
-    cardImgHeight?: string; // 이미지 크기
+    cardImgHeight?: number; // 이미지 크기
     FlagValid?: boolean;
     styleroom?: boolean;
     hasLink?: boolean;
@@ -48,7 +48,7 @@ export const LinkWrapper = styled(Link)``;
 
 export const ImgWrapper = styled.div<Props>`
     width: 100%;
-    height: ${(props) => props.cardImgHeight};
+    height: ${(props) => props.cardImgHeight}px;
     border-radius: 10px 10px 0 0;
     font-size: 0;
 
@@ -98,8 +98,12 @@ export const RoomInfoWrapper = styled.div<Props>`
 `;
 
 export const DetailWrapper = styled.div<Props>`
+    overflow: hidden;
+    width: 100%;
     font-size: 14px;
     color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     ${(props) =>
         props.CardType === 'type04' &&
