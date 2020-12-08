@@ -23,9 +23,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
@@ -49,12 +49,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "7.12.7",
     "@storybook/addon-actions": "^6.1.9",
     "@storybook/addon-essentials": "^6.1.9",
     "@storybook/addon-links": "^6.1.9",
     "@storybook/node-logger": "^6.1.9",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.9",
-    "@types/react-slick": "0.23.4"
+    "@types/react-slick": "0.23.4",
+    "babel-plugin-styled-components": "1.12.0",
+    "customize-cra": "1.0.0",
+    "react-app-rewired": "2.1.7"
   }
 }
