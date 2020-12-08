@@ -30,7 +30,7 @@ export function Find() {
                         <CardGrid
                             data={Type02CardData}
                             boxWidth="calc(50% - 16px);"
-                            cardImgHeight="100px"
+                            cardImgHeight={100}
                         />
                     </S.RoomBox>
                 </S.FindRoomBox>

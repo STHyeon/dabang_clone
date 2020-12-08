@@ -21,7 +21,7 @@
 .txt_over_many {display: -webkit-box; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 
 /* 영역 */
-.inner {width: 1200px; margin: 0 auto;}
+.inner {max-width: 1200px; width: 100%; margin: 0 auto;}
 // .inner {height: 100%; padding: 0 16px;}
 
 /* font */

@@ -13,7 +13,6 @@ export const FormInputContainer = styled.div``;
 
 export const FormInput = styled(Input)<Props>`
     width: calc(100% - 97px - 5px);
-    height: 42px;
     border: 0;
 
     ${(props) =>

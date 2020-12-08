@@ -31,7 +31,7 @@ export function Main() {
                 <S.CardBox type02>
                     <Slick
                         data={Type04CardData}
-                        boxWidth={185}
+                        boxWidth={184}
                         cardImgHeight={100}
                         slidesToScroll={5}
                         slidesToShow={5}
@@ -51,7 +51,7 @@ export function Main() {
                         <CardGrid
                             data={Type02CardData}
                             boxWidth="23.5%"
-                            cardImgHeight="186px"
+                            cardImgHeight={186}
                             cardGroup="room"
                         />
                     </S.CardBox>
@@ -68,7 +68,7 @@ export function Main() {
                         <CardGrid
                             data={Type03CardData}
                             boxWidth="23.5%"
-                            cardImgHeight="186px"
+                            cardImgHeight={186}
                             cardGroup="complex"
                         />
                     </S.CardBox>

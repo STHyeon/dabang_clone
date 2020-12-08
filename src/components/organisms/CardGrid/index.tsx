@@ -9,7 +9,7 @@ import { RECENTLYROOMTEXT, RECENTLYCOMPLEXTEXT } from 'utils/contents/string';
 export interface CardGridProps {
     data?: CardProps[]; // 카드 데이터
     boxWidth?: string; // 카드 크기
-    cardImgHeight?: string; // 카드 이미지 크기
+    cardImgHeight?: number; // 카드 이미지 크기
     cardGroup?: string; // 방/단지 구분
 }
 

@@ -25,7 +25,7 @@ export function Love() {
                 <S.MaxData className="fl_r">최근 본 방은 최대 50개까지 저장됩니다.</S.MaxData>
             </S.AlertBox>
             <S.CardGridBox>
-                <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight="186px" />
+                <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight={186} />
             </S.CardGridBox>
         </BaseTemplate>
     );
