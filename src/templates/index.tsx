@@ -14,11 +14,7 @@ export function BaseTemplate({ full, children }: BaseProps): React.ReactElement 
             <S.HeaderWrap>
                 <Header />
             </S.HeaderWrap>
-            {full ? (
-                <S.BaseWrap full>{children}</S.BaseWrap>
-            ) : (
-                <S.BaseWrap className="inner">{children}</S.BaseWrap>
-            )}
+            {full ? <S.BaseWrap full>{children}</S.BaseWrap> : <S.BaseWrap className="inner">{children}</S.BaseWrap>}
             <Footer />
         </S.Container>
     );

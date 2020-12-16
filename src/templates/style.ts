@@ -11,7 +11,7 @@ export const BaseWrap = styled.div<Props>`
         props.full &&
         css`
             width: 100%;
-            height: 100%;
+            height: calc(100% - 72px - 100px);
         `}
 `;
 
