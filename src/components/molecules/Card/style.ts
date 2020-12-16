@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface Props {
     boxWidth?: string;
-    cardImgHeight?: number; // 이미지 크기
+    cardImgHeight?: string; // 이미지 크기
     FlagValid?: boolean;
     styleroom?: boolean;
     hasLink?: boolean;
@@ -48,7 +48,7 @@ export const LinkWrapper = styled(Link)``;
 
 export const ImgWrapper = styled.div<Props>`
     width: 100%;
-    height: ${(props) => props.cardImgHeight}px;
+    height: ${(props) => props.cardImgHeight};
     border-radius: 10px 10px 0 0;
     font-size: 0;
 

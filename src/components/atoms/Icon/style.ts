@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const ImgStyle = styled.img`
-    height: ${(props) => props.height};
-    vertical-align: middle;
+interface Props {
+    IconSize?: string;
+}
+
+export const IconStyle = styled(FontAwesomeIcon)<Props>`
+    font-size: ${(props) => props.IconSize};
 `;

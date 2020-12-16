@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Img, Icon, EventDate } from 'components';
+import { Img, EventDate } from 'components';
 import TabIcon from 'assets/images/tab.svg';
 
 export interface CardProps {
@@ -22,7 +22,7 @@ export interface CardProps {
     ableRoom?: number; // 거래가능한 방 개수
     complexData?: boolean; // 단지정보 on/off
     boxWidth?: string; // 박스 크기
-    cardImgHeight?: number; // 이미지 크기
+    cardImgHeight?: string; // 이미지 크기
 }
 
 export function Card({
@@ -62,9 +62,7 @@ export function Card({
                             {Flag && (
                                 <S.Flag>
                                     {Flag}
-                                    {chkDate && (
-                                        <EventDate EventDateType="type01" dateAt={chkDate} />
-                                    )}
+                                    {chkDate && <EventDate EventDateType="type01" dateAt={chkDate} />}
                                 </S.Flag>
                             )}
                         </S.FlagWrapper>
@@ -100,15 +98,14 @@ export function Card({
                         <>
                             {ableRoom && (
                                 <S.InfoListWrapper>
-                                    거래가능한 방
-                                    <S.InfoDataWrapper>{ableRoom} 개</S.InfoDataWrapper>
+                                    거래가능한 방<S.InfoDataWrapper>{ableRoom} 개</S.InfoDataWrapper>
                                 </S.InfoListWrapper>
                             )}
                             {complexData && (
                                 <S.InfoListWrapper>
                                     단지 정보
                                     <S.InfoDataWrapper>
-                                        <Icon src={TabIcon} alt="탭 아이콘" height="18px" />
+                                        <Img src={TabIcon} alt="탭 아이콘" height="18px" />
                                     </S.InfoDataWrapper>
                                 </S.InfoListWrapper>
                             )}

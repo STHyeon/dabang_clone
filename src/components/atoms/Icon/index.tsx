@@ -1,12 +1,16 @@
 import React from 'react';
+import { IconName, IconPrefix, library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import * as S from './style';
 
 export interface IconProps {
-    src?: string; // 이미지 주소
-    alt?: string; // 이미지 설명
-    height?: string;
+    IconType: IconPrefix;
+    IconTitle: IconName;
+    IconSize?: string;
 }
 
-export function Icon({ height = '2rem', ...props }: IconProps): React.ReactElement {
-    return <S.ImgStyle height={height} {...props} />;
+export function Icon({ IconType, IconTitle, IconSize }: IconProps): any {
+    library.add(fas);
+
+    return <S.IconStyle icon={[IconType, IconTitle]} IconSize={IconSize} />;
 }

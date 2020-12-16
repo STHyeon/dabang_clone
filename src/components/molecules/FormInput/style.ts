@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { device } from 'utils/style/media';
-import { Input, Btn, Icon } from 'components';
+import { Input, Btn, Img } from 'components';
 
 interface Props {
     invalid?: boolean;
@@ -31,7 +31,7 @@ export const FormBtn = styled(Btn)<Props>`
         props.type02 &&
         css`
             width: 97px;
-            height: 34px;
+            height: 46px;
             border-radius: 2px;
             line-height: 1.1;
 
@@ -50,11 +50,10 @@ export const FormCaption = styled.div<Props>`
 
 export const IncludeBtn = styled.div<Props>`
     position: relative;
-    height: 44px;
     border: 1px solid #d0d2d6;
 `;
 
-export const IconWrapper = styled(Icon)`
+export const IconWrapper = styled(Img)`
     display: inline-block;
     /* width: 18px; */
     height: 18px;

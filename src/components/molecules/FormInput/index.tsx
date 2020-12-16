@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as S from './style';
-import { Label, Icon } from 'components';
+import { Label, Img } from 'components';
 import BgIcon from 'assets/images/search.svg';
 
 export interface FormInputProps {
@@ -24,27 +24,14 @@ export interface FormInputProps {
     inputHeight?: string; // input height 설정
 }
 
-export function FormInput({
-    FormInputType,
-    captionContent,
-    labelName,
-    htmlfor,
-    inputHeight,
-    src,
-    alt,
-    styletype,
-    btnText,
-    bgIcon,
-    description,
-    ...props
-}: FormInputProps): React.ReactElement {
+export function FormInput({ FormInputType, captionContent, labelName, htmlfor, inputHeight, src, alt, styletype, btnText, bgIcon, description, ...props }: FormInputProps): React.ReactElement {
     return (
         <S.FormInputContainer>
             {FormInputType === 'type01' && (
                 <>
                     <Label htmlfor={htmlfor} name={labelName} {...props} />
                     <S.FormInput inputHeight={inputHeight} {...props} />
-                    <S.FormCaption {...props}>{captionContent}</S.FormCaption>
+                    {captionContent && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
                 </>
             )}
 
@@ -58,17 +45,13 @@ export function FormInput({
                                 <S.FormInput type02 inputHeight={inputHeight} {...props} />
                             </>
                         ) : (
-                            <S.FormInput
-                                description={description}
-                                inputHeight={inputHeight}
-                                {...props}
-                            />
+                            <S.FormInput description={description} inputHeight={inputHeight} {...props} />
                         )}
                         <S.FormBtn type02 styletype={styletype}>
-                            {src ? <Icon src={src} alt={alt} /> : `${btnText}`}
+                            {src ? <Img src={src} alt={alt} /> : `${btnText}`}
                         </S.FormBtn>
                     </S.IncludeBtn>
-                    <S.FormCaption {...props}>{captionContent}</S.FormCaption>
+                    {captionContent && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
                 </>
             )}
         </S.FormInputContainer>
