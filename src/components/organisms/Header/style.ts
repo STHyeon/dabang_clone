@@ -37,6 +37,12 @@ export const HeaderWrapper = styled.div<Props>`
         display: inline-block;
     }
 
+    @media ${device.pc} {
+        li {
+            padding: 0 5px;
+        }
+    }
+
     ${(props) =>
         props.fl_l &&
         css`
@@ -61,7 +67,7 @@ export const HeaderWrapper = styled.div<Props>`
                 margin: 0 0 0 9.1%;
 
                 @media ${device.pc} {
-                    margin: 0 0 0 4%;
+                    margin: 0 0 0 2%;
                 }
             }
 
@@ -80,7 +86,7 @@ export const NavBox = styled.nav`
     text-align: right;
 
     @media ${device.pc} {
-        width: calc(100% - 275px);
+        width: calc(100% - 320px);
     }
 `;
 

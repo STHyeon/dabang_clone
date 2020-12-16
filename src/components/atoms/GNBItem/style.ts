@@ -10,6 +10,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.li<ContainerProps>`
+    display: inline-block;
     position: relative;
     transition: color ease 0.2s;
     width:${(props) => (props.itemWidth ? props.itemWidth : 'auto')};
@@ -34,7 +35,7 @@ export const Container = styled.li<ContainerProps>`
             font-size: ${props.fontSize ? props.fontSize : '13px'};
             color: ${props.fontColor ? props.fontColor : '#888888'};
 
-            & + div {
+            & + li {
                 &::after {
                     display: block;
                     position: absolute;
@@ -62,7 +63,7 @@ export const Container = styled.li<ContainerProps>`
             font-size: ${props.fontSize ? props.fontSize : '13px'};
             color: ${props.fontColor ? props.fontColor : '#888888'};
 
-            & + div {
+            & + li {
                 &::after {
                     display: block;
                     position: absolute;

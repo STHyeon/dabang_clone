@@ -10,13 +10,7 @@ export function Love() {
         <BaseTemplate>
             <S.LoveTitle>관심목록</S.LoveTitle>
             <S.List>
-                <GNB
-                    items={LOVEMENU}
-                    GNBType="type02"
-                    itemWidth="20%"
-                    hoverColor="#000000"
-                    fontColor="#888888"
-                />
+                <GNB items={LOVEMENU} GNBType="type02" itemWidth="20%" hoverColor="#000000" fontColor="#888888" />
             </S.List>
             <S.AlertBox className="clearfix">
                 <S.RecData className="fl_l">
@@ -25,7 +19,7 @@ export function Love() {
                 <S.MaxData className="fl_r">최근 본 방은 최대 50개까지 저장됩니다.</S.MaxData>
             </S.AlertBox>
             <S.CardGridBox>
-                <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight={186} />
+                <CardGrid data={Type02CardData} boxWidth="23.5%" cardImgHeight="186px" />
             </S.CardGridBox>
         </BaseTemplate>
     );
