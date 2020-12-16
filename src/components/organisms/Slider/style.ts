@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-    boxWidth?: number; // box 크기
+    boxWidth?: string; // box 크기
 }
 
 export const GridItem = styled.div<Props>`
@@ -32,7 +32,7 @@ export const GridItem = styled.div<Props>`
         }
 
         .slick-slide {
-            width: ${(props) => props.boxWidth && props.boxWidth}px;
+            width: ${(props) => props.boxWidth && props.boxWidth};
             margin: 0 15px;
         }
     }

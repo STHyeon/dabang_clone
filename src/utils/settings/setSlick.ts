@@ -6,14 +6,14 @@ export const setSlick = {
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
-    centerMode: true,
+    centerMode: false,
     variableWidth: true,
     responsive: [
         {
-            breakpoint: 1250,
+            breakpoint: 1920,
             settings: {
                 infinite: true,
-                slidesToShow: 4,
+                slidesToShow: 3,
                 slidesToScroll: 1
             }
         },
@@ -21,8 +21,8 @@ export const setSlick = {
             breakpoint: 1040,
             settings: {
                 infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
+                slidesToShow: 2,
+                slidesToScroll: 1
             }
         },
         {
