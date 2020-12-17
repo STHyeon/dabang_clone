@@ -55,7 +55,7 @@ export const IncludeBtn = styled.div<Props>`
 
 export const IconWrapper = styled(Img)`
     display: inline-block;
-    /* width: 18px; */
+    width: 50px;
     height: 18px;
     /* margin: 0 0 0 16px; */
     padding: 0 16px;
