@@ -38,5 +38,9 @@ export const CardGridBox = styled.div`
 
     li + li {
         margin: 0 0 0 20px;
+
+        &:nth-child(4n + 1) {
+            margin: 0;
+        }
     }
 `;
