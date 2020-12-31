@@ -15,6 +15,10 @@ export const Container = styled.div`
     border-bottom: 1px solid #ebebeb;
     line-height: 70px;
 
+    @media ${device.pc} {
+        padding: 0;
+    }
+
     @media ${device.mb} {
         height: 44px;
         padding: 0 16px;
@@ -94,6 +98,7 @@ export const SideNavBox = styled.div<Props>`
     position: fixed;
     top: 0;
     right: -100%; /* default -100% */
+    z-index: 30;
     width: 100%;
     height: 100%;
     background: #fff;

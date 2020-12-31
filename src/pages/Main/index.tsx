@@ -24,14 +24,14 @@ export function Main() {
                 <S.BoxWrap>
                     <Boxes BoxesType="type02" ListText={SEEROOM} StrongListText={LOVEROOM} ListDescription={ROOMDESCRIPTION} />
                     <S.CardBox type03>
-                        <Slick data={Type02CardData} boxWidth="280px" cardImgHeight="186px" slidesToScroll={3} slidesToShow={3} cardGroup="room" />
+                        <Slick data={Type02CardData} boxWidth="280px" cardImgHeight="186px" slidesToScroll={1} slidesToShow={1} cardGroup="room" />
                     </S.CardBox>
                 </S.BoxWrap>
 
                 <S.BoxWrap>
                     <Boxes BoxesType="type02" ListText={SEECOMPLEX} StrongListText={LOVECOMPLEX} ListDescription={COMPLEXDESCRIPTION} />
                     <S.CardBox type03>
-                        <Slick data={Type03CardData} boxWidth="280px" cardImgHeight="186px" slidesToScroll={1} slidesToShow={4} cardGroup="complex" />
+                        <Slick data={Type03CardData} boxWidth="280px" cardImgHeight="186px" slidesToScroll={1} slidesToShow={1} cardGroup="complex" />
                     </S.CardBox>
                 </S.BoxWrap>
             </S.Part>

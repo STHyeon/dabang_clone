@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from 'utils/style/media';
 
 interface Props {
     boxWidth?: string; // box 크기

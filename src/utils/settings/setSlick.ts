@@ -34,7 +34,7 @@ export const setSlick = {
             }
         },
         {
-            breakpoint: 480,
+            breakpoint: 767,
             settings: {
                 infinite: true,
                 slidesToShow: 1,
