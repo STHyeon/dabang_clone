@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Input, Label, Btn } from 'components';
+import CheckIcon from 'assets/images/checkmark.svg';
 
 export const ModalOverlay = styled.div`
     position: relative;
@@ -40,13 +41,9 @@ export const ModalCheckWrap = styled.div`
     margin: 18px 0;
     font-size: 14px;
     line-height: 22px;
-    text-align: right;
 
     label {
         display: inline-block;
-        position: absolute;
-        left: 0;
-        margin: 0;
 
         &::before {
             display: inline-block;
@@ -60,6 +57,12 @@ export const ModalCheckWrap = styled.div`
         }
     }
 
+    span {
+        position: absolute;
+        right: 0;
+        margin: 0;
+    }
+
     input[type='checkbox'] {
         width: 1px;
         height: 1px;
@@ -70,7 +73,7 @@ export const ModalCheckWrap = styled.div`
         left: 0;
 
         &:checked + label::before {
-            background: red;
+            background: url(${CheckIcon}) #1374f8 no-repeat center center/13px;
         }
     }
 `;
@@ -87,5 +90,23 @@ export const ModalAddMem = styled.div`
 
     span {
         color: #1564f9;
+    }
+`;
+
+export const ModalLinkState = styled.span`
+    cursor: pointer;
+`;
+
+export const ModalTermWrap = styled.div`
+    overflow-y: auto;
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    background: #eee;
+
+    pre {
+        font-size: 13px;
+        color: #212121;
+        white-space: pre-wrap;
     }
 `;
