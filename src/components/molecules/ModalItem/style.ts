@@ -1,25 +1,18 @@
 import styled from 'styled-components';
 import { Input, Label, Btn } from 'components';
 import CheckIcon from 'assets/images/checkmark.svg';
+import CheckOff from 'assets/images/checkoff.svg';
+import CheckOn from 'assets/images/checkon.svg';
 
-export const ModalOverlay = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+export const ModalCommonTitle = styled.h2`
+    height: 80px;
+    padding: 0 30px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 22px;
+    line-height: 80px;
 `;
 
-export const ModalInner = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 420px;
-    padding: 50px 35px 0;
-    transform: translate(-50%, -50%);
-    background: #fff;
-`;
-
-export const ModalTitle = styled.h2`
+export const ModalLoginTitle = styled.h2`
     margin: 0 0 20px;
     font-size: 25px;
     text-align: center;
@@ -36,7 +29,7 @@ export const ModalLabel = styled(Label)`
     color: #888888;
 `;
 
-export const ModalCheckWrap = styled.div`
+export const ModalLoginCheckWrap = styled.div`
     position: relative;
     margin: 18px 0;
     font-size: 14px;
@@ -62,7 +55,9 @@ export const ModalCheckWrap = styled.div`
         right: 0;
         margin: 0;
     }
+`;
 
+export const ModalCommonWrap = styled.div`
     input[type='checkbox'] {
         width: 1px;
         height: 1px;
@@ -76,6 +71,105 @@ export const ModalCheckWrap = styled.div`
             background: url(${CheckIcon}) #1374f8 no-repeat center center/13px;
         }
     }
+`;
+
+export const ModalAgreeWrap = styled(ModalCommonWrap)`
+    width: 150px;
+    margin: 0 auto;
+`;
+
+export const ModalInputWrap = styled.div`
+    &::after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+    & + & {
+        margin: 20px 0 0;
+    }
+`;
+
+export const ModalRegisterLabel = styled(Label)`
+    float: left;
+    width: 100px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 46px;
+    cursor: default;
+`;
+
+export const ModalRegisterInput = styled(Input)`
+    float: left;
+    width: calc(100% - 100px);
+`;
+
+export const ModalRegisterEmail = styled(Input)`
+    width: 128px;
+`;
+
+export const ModalEmailAt = styled.span`
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+`;
+
+export const ModalEmailTail = styled.select`
+    width: calc(100% - 25px - 100px - 128px);
+    height: 46px;
+    border: 1px solid #dddfe1;
+`;
+
+export const ModalTelInput = styled(Input)`
+    width: 92px;
+`;
+
+export const ModalTelInputCheck = styled(Input)`
+    width: 320px;
+    margin: 0 0 0 100px;
+`;
+
+export const ModalTelAt = styled.span`
+    display: inline-block;
+    width: 22px;
+    text-align: center;
+`;
+
+export const ModalTelConfirm = styled(Btn)`
+    /* width: calc(100% - 100px - 44px - 276px - 10px); */
+    width: calc(100% - 100px - 320px - 10px);
+    height: 46px;
+    margin: 0 0 0 10px;
+`;
+
+export const TermsTxt = styled(Label)`
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin: 30px 0 6px;
+    line-height: 30px;
+    color: #000000;
+    cursor: default;
+
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background: url(${CheckOff}) no-repeat;
+    }
+
+    input[type='checkbox']:checked + &::after {
+        background: url(${CheckOn}) no-repeat;
+    }
+`;
+
+export const TermsRequired = styled.span`
+    color: #1564f9;
 `;
 
 export const ModalBtn = styled(Btn)`
@@ -98,6 +192,10 @@ export const ModalLinkState = styled.span`
 `;
 
 export const ModalTermWrap = styled.div`
+    /* margin: 0 0 30px; */
+`;
+
+export const ModalTermContent = styled.div`
     overflow-y: auto;
     width: 100%;
     height: 120px;
