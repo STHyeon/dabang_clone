@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react';
 
 import { EventDate, EventDateProps } from './index';
 
@@ -8,22 +8,20 @@ export default {
     argTypes: {
         dateAt: {
             description: '날짜 데이터'
+        },
+        eventDateType: {
+            control: {
+                type: 'select',
+                options: ['Date', 'Month']
+            }
         }
     }
 } as Meta;
 
 const Now = new Date();
-const Template1: Story<EventDateProps> = (args) => <EventDate {...args} />;
-const Template2: Story<EventDateProps> = (args) => <EventDate {...args} />;
 
-export const FullDate = Template1.bind({});
-FullDate.args = {
-    EventDateType: 'type01',
-    dateAt: Now
-};
-
-export const UntilMonths = Template2.bind({});
-UntilMonths.args = {
-    EventDateType: 'type02',
+export const S_EventDate = (args: EventDateProps) => <EventDate {...args} />;
+S_EventDate.args = {
+    eventDateType: 'Date',
     dateAt: Now
 };
