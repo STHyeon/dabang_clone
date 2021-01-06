@@ -3,36 +3,27 @@ import * as S from './style';
 
 export interface BtnProps {
     children?: React.ReactElement | string; // 버튼 내용 또는 엘리먼트
-    to?: string; // Link 경로
-    href?: string; // a tag 경로
-    styletype?: string; // button styling type (ex. priamry, disable)
     disabled?: boolean; //disabled 여부
-    onClick?: () => void;
+    btnType?: string; // button styling type (ex. priamry, disable)
+    btnOnClick?: () => void; // 클릭 이벤트
 }
 
-export function Btn({
-    children,
-    to,
-    href,
-    styletype = 'none',
-    ...props
-}: BtnProps): React.ReactElement {
-    if (to) {
-        return (
-            <S.StyledLink styletype={styletype} to={to} {...props}>
-                {children}
-            </S.StyledLink>
-        );
-    } else if (href) {
-        return (
-            <S.StyledAnchor styletype={styletype} href={href} {...props}>
-                {children}
-            </S.StyledAnchor>
-        );
-    }
+export interface LinkBtnProps extends BtnProps {
+    btnLink: string; // Link 경로
+}
+
+export function Btn({ children, btnOnClick, ...props }: BtnProps): React.ReactElement {
     return (
-        <S.StyledBtn styletype={styletype} {...props}>
+        <S.Btn onClick={btnOnClick} {...props}>
             {children}
-        </S.StyledBtn>
+        </S.Btn>
+    );
+}
+
+export function LinkBtn({ children, btnLink, btnOnClick, ...props }: LinkBtnProps): React.ReactElement {
+    return (
+        <S.LinkBtn onClick={btnOnClick} to={btnLink} {...props}>
+            {children}
+        </S.LinkBtn>
     );
 }
