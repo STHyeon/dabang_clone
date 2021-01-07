@@ -4,13 +4,13 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import * as S from './style';
 
 export interface IconProps {
-    IconType: IconPrefix;
-    IconTitle: IconName;
-    IconSize?: string;
+    iconType: IconPrefix; // FontAwesome 타입
+    iconTitle: IconName; // FontAwesome 이름
+    iconSize?: string;
 }
 
-export function Icon({ IconType, IconTitle, IconSize }: IconProps): any {
+export function Icon({ iconType, iconTitle, ...props }: IconProps): React.ReactElement {
     library.add(fas);
 
-    return <S.IconStyle icon={[IconType, IconTitle]} IconSize={IconSize} />;
+    return <S.Icon icon={[iconType, iconTitle]} {...props} />;
 }
