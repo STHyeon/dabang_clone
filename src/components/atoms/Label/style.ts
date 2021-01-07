@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components';
 
-interface Props {
+interface LabelProps {
     required?: boolean;
 }
 
-export const Label = styled.label<Props>`
-    margin: 0 0 5px;
+export const Label = styled.label<LabelProps>`
     font-size: 14px;
     color: #414141;
 

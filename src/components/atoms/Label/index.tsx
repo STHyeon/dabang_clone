@@ -3,14 +3,14 @@ import React from 'react';
 import * as S from './style';
 
 export interface LabelProps {
-    children?: string | React.ReactElement;
+    children: string | React.ReactElement;
+    htmlFor: string;
     required?: boolean;
-    htmlfor?: string;
 }
 
-export function Label({ children, htmlfor, required = false, ...props }: LabelProps): React.ReactElement {
+export function Label({ children, htmlFor, required = false, ...props }: LabelProps): React.ReactElement {
     return (
-        <S.Label htmlFor={htmlfor} required={required} {...props}>
+        <S.Label htmlFor={htmlFor} required={required} {...props}>
             {children}
         </S.Label>
     );
