@@ -1,5 +1,5 @@
 ## 안녕하세요! 👏
-지난 글에 이어서 Atoms를 만들어보겠습니다.
+지난 글에 이어서 Atoms(재료)를 만들어보겠습니다.
 <br />
 
 ## 목차 📋
@@ -12,7 +12,7 @@
 ### 아이콘(Icon)
 아이콘은 FontAwesome을 사용할겁니다.
 
-설치 [공식문서](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
+설치 - [공식문서](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
 
 ```console
 npm i --save @fortawesome/fontawesome-svg-core
@@ -111,9 +111,11 @@ general.args = {
 
 예제로 오른쪽 화살표를 넣어봤습니다. <br />
 
-![화면 캡처 2021-01-07 104531](https://user-images.githubusercontent.com/37692675/103840799-9c91f780-50d5-11eb-91a4-7208adf93acc.png)
+<img src="https://user-images.githubusercontent.com/37692675/103840799-9c91f780-50d5-11eb-91a4-7208adf93acc.png" width="100%" />
 iconType을 알아보려면 사이트에서 원하는 아이콘을 클릭하고 i태그 내에 <u>class를 확인</u>해봅니다.
-<b>fas fa-chevron-right</b>에서 fas가 iconType, <u>fa-</u> 를 제거한 나머지가 iconTitle입니다.
+<b>fas fa-chevron-right</b> <br />
+fas - iconType <br />
+<u>fa-</u> 제외한 나머지 - iconTitle
 <br />
 
 ### 이미지(Img)
@@ -309,9 +311,9 @@ import React from 'react';
 import * as S from './style';
 
 export interface LabelProps {
-    children?: string | React.ReactElement;
+    children: string | React.ReactElement;
+    htmlFor: string;
     required?: boolean;
-    htmlFor?: string;
 }
 
 export function Label({ children, htmlFor, required = false, ...props }: LabelProps): React.ReactElement {
@@ -352,6 +354,7 @@ general.args = {
 <br />
 
 카카오맵을 이용하려면 스크립트문을 적용해야합니다. 하지만 storybook에는 head 부분이 따로 없기에 만들어 줘야합니다.
+[카카오맵 공식문서](https://apis.map.kakao.com/)
 <br />
 
 우선, .storybook/preview-head.html 파일을 생성해줍니다.
@@ -360,7 +363,7 @@ general.args = {
 project
 └───.storybook
 │   │   ...
-│   │   preview-head.html
+│   │   preview-head.html // 추가
 │
 └───node_modules
 └───public
@@ -390,4 +393,224 @@ REACT_APP_KAKAO_MAP_KEY=123456456825488
 ></script>
 
 ```
-원래대로면 %React_APP_KAKAO_MAP_KEY%에서 끝나야 하지만 저희는 zoom 숫자에 따라 보이는 마커가 다른 기능이 필요하기 때문에 라이브러리를 불러온 겁니다.
+원래대로면 %React_APP_KAKAO_MAP_KEY%에서 끝나야 하지만
+
+<img src="https://user-images.githubusercontent.com/37692675/103867695-227c6580-510b-11eb-8c9a-93019de8684a.png" width="100%" />
+
+저희는 zoom 범위에 따라 보이는 마커가 다른 기능이 필요하기 때문에 'clusterer' 라이브러리를 불러온 겁니다.
+<br />
+
+```javascript
+// style.ts
+
+import styled from 'styled-components';
+
+interface ContainerProps {
+    height: string;
+}
+
+export const Container = styled.div<ContainerProps>`
+    width: 100%;
+    height: ${(props) => (props.height ? props.height : '28rem')};
+    border-radius: 0.3rem;
+`;
+
+```
+
+<br />
+
+```javascript
+// index.ts
+
+import React, { useEffect, useRef } from 'react';
+import * as S from './style';
+
+declare const kakao: any; // for using kakao map sdk
+
+// 위치 데이터 type 정의
+interface PositionProps {
+    title: string;
+    latitude: number;
+    longitude: number;
+}
+
+export interface KakaoMapProps {
+    address?: string;
+    positions?: Array<PositionProps>;
+    height?: string;
+}
+
+export function KakaoMap({ address, positions, height = '100%' }: KakaoMapProps): React.ReactElement {
+    const kakaoMapRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const kakaoMapElement = kakaoMapRef.current;
+        const options = {
+            center: new kakao.maps.LatLng(37.566826, 126.9786567),
+            level: 3
+        };
+        const kakaoMap = new kakao.maps.Map(kakaoMapElement, options);
+        const ps = new kakao.maps.services.Places();
+
+        function placesSearchCB(data: any, status: any, pagination: any) {
+            if (status === kakao.maps.services.Status.OK) {
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                // LatLngBounds 객체에 좌표를 추가합니다
+                var bounds = new kakao.maps.LatLngBounds();
+
+                for (var i = 0; i < data.length; i++) {
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }
+
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+                kakaoMap.setBounds(bounds);
+            }
+        }
+
+        ps.keywordSearch(address, placesSearchCB);
+
+        if (positions) {
+            // 마커 클러스터러를 생성합니다
+            var clusterer = new kakao.maps.MarkerClusterer({
+                map: kakaoMap, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+                averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+                minLevel: 8 // 클러스터 할 최소 지도 레벨
+            });
+
+            // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
+            var markers = positions.map(function (position: any, i: any) {
+                return new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(position.latitude, position.longitude)
+                });
+            });
+
+            // 클러스터러에 마커들을 추가합니다
+            clusterer.addMarkers(markers);
+        }
+    }, [address, positions]);
+
+    return <S.Container ref={kakaoMapRef} height={height} />;
+}
+
+```
+<br />
+index.tsx 안에 내용은 거의 공식문서를 참고하였습니다.
+
+[클러스터 - 카카오맵 공식문서](https://apis.map.kakao.com/web/sample/basicClusterer/) - zoom 범위에 따라 여러 마커를 하나로 보이게 해주는 라이브러리
+[지도 범위 재설정 - 카카오맵 공식문서](https://apis.map.kakao.com/web/sample/setBounds/) - 위치 재설정시 지도 범위 재설정
+
+저는 위 2개를 합쳤습니다.
+서울역을 검색(지도 범위 재설정)하면 서울역 주변 방 위치(클러스터)를 볼 수 있게 만들었습니다.
+<br />
+
+그 외 설명들은 주석에 달아놓았습니다.
+<br />
+
+```javascript
+// index.stories.tsx
+
+import React from 'react';
+import { Meta } from '@storybook/react';
+import { KakaoMap, KakaoMapProps } from './index';
+
+export default {
+    title: 'Atoms/KakaoMap',
+    component: KakaoMap
+} as Meta;
+
+export const general = (args: KakaoMapProps) => <KakaoMap {...args} />;
+general.args = {
+    address: '카카오 본사',
+    positions: [
+        {
+            title: '카카오',
+            latitude: 33.450705,
+            longitude: 126.570677
+        },
+        {
+            title: '생태연못',
+            latitude: 33.450936,
+            longitude: 126.569477
+        },
+        {
+            title: '텃밭',
+            latitude: 33.450879,
+            longitude: 126.56994
+        },
+        {
+            title: '근린공원',
+            latitude: 33.451393,
+            longitude: 126.570738
+        }
+    ]
+};
+```
+<br />
+
+이렇게 작성하시면 아래 이미지같이 뜨시면 성공입니다.
+zoom 거리에 따라 클러스터와 지도 범위가 작동되는지도 확인해주시면 됩니다.
+<img src="https://user-images.githubusercontent.com/37692675/103964728-7cc70600-519f-11eb-99ce-906e5b960993.png" width="100%" />
+<br />
+
+<span style="color: red;">혹시라도 <b>kakao is not defined</b>라는 오류가 뜬다면 보통은 <u>api key</u>가 틀리고나 ip허용을 안했을 확률이 높습니다.</span>
+
+번외로 데이터 관리를 쉽게 하기위해 위치데이터를 따로 분리하겠습니다.
+`utils/MapData.json`
+json으로 만드는 이유는 나중에 서버랑 작업할 때, 보통 json 형식으로 정보가 전달되기 때문에 json형태로 제작합니다.
+<br />
+
+```json
+// MapData.json
+
+{
+    "positions": [
+        {
+            "title": "카카오",
+            "latitude": 33.450705,
+            "longitude": 126.570677
+        },
+        {
+            "title": "생태연못",
+            "latitude": 33.450936,
+            "longitude": 126.569477
+        },
+        {
+            "title": "텃밭",
+            "latitude": 33.450879,
+            "longitude": 126.56994
+        },
+        {
+            "title": "근린공원",
+            "latitude": 33.451393,
+            "longitude": 126.570738
+        }
+    ]
+}
+```
+
+```javascript
+// index.stories.tsx
+
+import React from 'react';
+import { Meta } from '@storybook/react';
+import { KakaoMap, KakaoMapProps } from './index';
+import MapData from 'utils/MapData.json'; // 추가
+
+export default {
+    title: 'Atoms/KakaoMap',
+    component: KakaoMap
+} as Meta;
+
+export const general = (args: KakaoMapProps) => <KakaoMap {...args} />;
+general.args = {
+    address: '카카오 본사',
+    positions: MapData.positions // 변경
+};
+```
+<br />
+
+이렇게 작성완료하시면 Atoms 항목은 끝났습니다! 👍
+<br />
+다음 글에서는 Molecules - Card, Modal 등을 만들어 보겠습니다
+<br />
+<br />
