@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+***
+***
+***
+*** To avoid retyping too much info. Do a search and replace for the following:
+*** github_username, repo_name, twitter_handle, email, project_title, project_description
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/STHyeon/dabang_clone">
+    <img src="https://user-images.githubusercontent.com/37692675/104154612-ab0b4680-5428-11eb-9aa5-adb97e64606c.png" alt="Logo" width="80" height="80">
+  </a>
 
-### `yarn test`
+  <h3 align="center">다방</h3>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <p align="center">
+    <a href="https://github.com/STHyeon/dabang_clone"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://6004f21f0df11e0021f70b45-klfxhphtyt.chromatic.com/">View Demo</a>
+  </p>
+</p>
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">목차</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">프로젝트 소개</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">필수 조건</a></li>
+        <li><a href="#installation">설치</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- ABOUT THE PROJECT -->
+## 프로젝트 소개
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://user-images.githubusercontent.com/37692675/104931413-b4c51900-59e9-11eb-9b68-b4dfac935900.jpg" alt="" width="49%"/> <img src="https://user-images.githubusercontent.com/37692675/104931475-cd353380-59e9-11eb-877c-53aee2f4a83a.jpg" alt="" width="49%"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+다방을 Atomic Design과 Storybook을 이용하여 재사용 컴포넌트로 만들었습니다. <br />또한, Typescript로 알맞은 Props를 받을 수 있고, Pages 단계에서 현 다방에서 지원하지 않는 반응형 페이지로 만들어 보았습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Built With
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![React Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white) ![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=TypeScript&logoColor=white) ![Storybook Badge](https://img.shields.io/badge/Storybook-ff4785?style=for-the-badge&logo=Storybook&logoColor=white) ![Styledcomponent Badge](https://img.shields.io/badge/Styled--components-db7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+로컬에서 실행하려면 다음 단계를 따라주세요.
+
+### 필수
+
+다음은 소프트웨어를 사용하는 데 필요한 항목을 나열하는 방법과 설치하는 방법에 대한 예입니다.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### 설치
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/STHyeon/dabang_clone.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start
+   ```sh
+   npm run storybook
+   ```
+
+
+
+<!-- CONTACT -->
+## Contact
+
+TaeHyeon Song (Damsom) - [Mail](mailto:toby2009@naver.com)
+
+Project Link: [https://github.com/STHyeon/dabang_clone](https://github.com/STHyeon/dabang_clone)
