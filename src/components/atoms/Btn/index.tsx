@@ -8,7 +8,7 @@ export interface BtnProps {
     btnOnClick?: () => void; // 클릭 이벤트
 }
 
-export interface LinkBtnProips extends BtnProps {
+export interface LinkBtnProps extends BtnProps {
     btnLink: string; // Link 경로
 }
 
@@ -20,7 +20,7 @@ export function Btn({ children, btnOnClick, ...props }: BtnProps): React.ReactEl
     );
 }
 
-export function LinkBtn({ children, btnLnk, btnOnClick, ...props }: LinkBtnProps): React.ReactElement {
+export function LinkBtn({ children, btnLink, btnOnClick, ...props }: LinkBtnProps): React.ReactElement {
     return (
         <S.LinkBtn onClick={btnOnClick} to={btnLink} {...props}>
             {children}
