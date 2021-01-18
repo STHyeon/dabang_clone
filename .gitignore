@@ -26,4 +26,5 @@ yarn-error.log*
 # .env
 .eslintcache
 .vscode
+build-storybook.log
 package-lock.json
