@@ -29,7 +29,9 @@ export function FormInput({ FormInputType, captionContent, labelName, htmlfor, i
         <S.FormInputContainer>
             {FormInputType === 'type01' && (
                 <>
-                    <Label htmlfor={htmlfor} name={labelName} {...props} />
+                    <Label htmlfor={htmlfor} {...props}>
+                        {labelName}
+                    </Label>
                     <S.FormInput inputHeight={inputHeight} {...props} />
                     {captionContent && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
                 </>
@@ -37,7 +39,11 @@ export function FormInput({ FormInputType, captionContent, labelName, htmlfor, i
 
             {FormInputType === 'type02' && (
                 <>
-                    {labelName && <Label htmlfor={htmlfor} name={labelName} {...props} />}
+                    {labelName && (
+                        <Label htmlfor={htmlfor} {...props}>
+                            {labelName}
+                        </Label>
+                    )}
                     <S.IncludeBtn type02>
                         {bgIcon ? (
                             <>

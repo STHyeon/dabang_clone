@@ -13,7 +13,7 @@ export function Modal({}: ModalProps): React.ReactElement {
                 <S.ModalInput placeholder="비밀번호" inputHeight="46px" />
                 <S.ModalCheckWrap>
                     <S.ModalInput id="idSave" inputType="checkbox" />
-                    <S.ModalLabel name="아이디 저장" htmlfor="idSave" />
+                    <S.ModalLabel htmlfor="idSave">아이디 저장</S.ModalLabel>
                     <S.ModalLinkState>비밀번호 재설정</S.ModalLinkState>
                 </S.ModalCheckWrap>
                 <S.ModalBtn styletype="secondary">로그인</S.ModalBtn>

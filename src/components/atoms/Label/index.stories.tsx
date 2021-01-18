@@ -11,6 +11,6 @@ const Template: Story<LabelProps> = (args) => <Label {...args} />;
 
 export const general = Template.bind({});
 general.args = {
-    name: '이메일',
+    children: '이메일',
     required: false
 };
