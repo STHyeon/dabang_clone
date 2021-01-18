@@ -1,4 +1,4 @@
 import styled from 'styled-components';
-import { Btn } from 'components';
+import { LinkBtn } from 'components';
 
-export const ImgBtnWrapper = styled(Btn)``;
+export const ImgBtnWrapper = styled(LinkBtn)``;
