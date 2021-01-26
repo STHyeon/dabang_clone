@@ -25,11 +25,13 @@ const BtnCSS = css<BtnProps>`
         cursor: default;
     }
 
+    ${(props) => props.btnType === 'default' && css``}
+
     ${(props) =>
         props.btnType === 'blue' &&
         css`
             border: 0;
-            color: #ffffff;
+            color: #ffffff !important;
             background: #1a5ae8;
         `}
 
@@ -37,6 +39,12 @@ const BtnCSS = css<BtnProps>`
         props.btnType === 'blue_outline' &&
         css`
             border-color: #1a5ae8;
+        `}
+
+    ${(props) =>
+        props.btnType === 'border_none' &&
+        css`
+            border: 0;
         `}
 `;
 

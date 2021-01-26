@@ -10,7 +10,7 @@ export default {
         btnType: {
             control: {
                 type: 'select',
-                options: ['blue', 'blue_outline']
+                options: ['default', 'blue', 'blue_outline', 'border_none']
             }
         }
     }
