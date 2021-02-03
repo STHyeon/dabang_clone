@@ -35,6 +35,20 @@ export const ModalLoginCheckWrap = styled.div`
     font-size: 14px;
     line-height: 22px;
 
+    input[type='checkbox'] {
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked + label::before {
+            background: url(${CheckIcon}) #1374f8 no-repeat center center/13px;
+        }
+    }
+
     label {
         display: inline-block;
 
@@ -175,6 +189,7 @@ export const TermsRequired = styled.span`
 export const ModalBtn = styled(Btn)`
     width: 100%;
     height: 60px;
+    margin: 10px 0 0;
 `;
 
 export const ModalAddMem = styled.div`
