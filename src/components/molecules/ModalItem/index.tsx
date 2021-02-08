@@ -1,11 +1,10 @@
 import React from 'react';
 
 import * as S from './style';
-import { TermTxt } from 'utils/contents/string';
 
 export interface ModalItemProps {}
 
-export function LoginModal({}: ModalItemProps): React.ReactElement {
+export function LoginItemModal({}: ModalItemProps): React.ReactElement {
     return (
         <>
             <S.ModalLoginTitle>로그인</S.ModalLoginTitle>
@@ -16,7 +15,7 @@ export function LoginModal({}: ModalItemProps): React.ReactElement {
                 <S.ModalLabel htmlFor="idSave">아이디 저장</S.ModalLabel>
                 <S.ModalLinkState>비밀번호 재설정</S.ModalLinkState>
             </S.ModalLoginCheckWrap>
-            <S.ModalBtn btnType="secondary">로그인</S.ModalBtn>
+            <S.ModalBtn btnType="blue">로그인</S.ModalBtn>
             <S.ModalAddMem>
                 아직 회원이 아니세요? <S.ModalLinkState>이메일로 회원가입</S.ModalLinkState>
             </S.ModalAddMem>
@@ -24,7 +23,7 @@ export function LoginModal({}: ModalItemProps): React.ReactElement {
     );
 }
 
-export function RegisterModal({}: ModalItemProps): React.ReactElement {
+export function RegisterItemModal({}: ModalItemProps): React.ReactElement {
     return (
         <>
             <S.ModalCommonTitle>회원가입</S.ModalCommonTitle>
@@ -60,22 +59,22 @@ export function RegisterModal({}: ModalItemProps): React.ReactElement {
                     <S.ModalTelInput inputType="tel" />
                     <S.ModalTelAt>-</S.ModalTelAt>
                     <S.ModalTelInput inputType="tel" />
-                    <S.ModalTelConfirm btnType="secondary">인증번호 요청</S.ModalTelConfirm>
+                    <S.ModalTelConfirm btnType="blue">인증번호 요청</S.ModalTelConfirm>
                 </S.ModalInputWrap>
 
                 <S.ModalInputWrap>
                     {/* <S.ModalRegisterLabel htmlFor="tel"></S.ModalRegisterLabel> */}
                     <S.ModalTelInputCheck inputType="tel" />
-                    <S.ModalTelConfirm btnType="secondary">인증번호 요청</S.ModalTelConfirm>
+                    <S.ModalTelConfirm btnType="blue">인증번호 요청</S.ModalTelConfirm>
                 </S.ModalInputWrap>
             </S.ModalCommonWrap>
 
-            <S.ModalBtn btnType="secondary">이메일 회원가입</S.ModalBtn>
+            <S.ModalBtn btnType="blue">이메일 회원가입</S.ModalBtn>
         </>
     );
 }
 
-export function TermModal({}: ModalItemProps): React.ReactElement {
+export function TermItemModal({}: ModalItemProps): React.ReactElement {
     return (
         <>
             <S.ModalCommonWrap>
@@ -85,7 +84,7 @@ export function TermModal({}: ModalItemProps): React.ReactElement {
                         약관동의1<S.TermsRequired> (필수)</S.TermsRequired>
                     </>
                 </S.TermsTxt>
-                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: TermTxt }}></S.ModalTermContent>
+                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: 'aa' }}></S.ModalTermContent>
             </S.ModalCommonWrap>
 
             <S.ModalCommonWrap>
@@ -95,7 +94,7 @@ export function TermModal({}: ModalItemProps): React.ReactElement {
                         약관동의1<S.TermsRequired> (필수)</S.TermsRequired>
                     </>
                 </S.TermsTxt>
-                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: TermTxt }}></S.ModalTermContent>
+                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: 'aa' }}></S.ModalTermContent>
             </S.ModalCommonWrap>
 
             <S.ModalCommonWrap>
@@ -105,7 +104,7 @@ export function TermModal({}: ModalItemProps): React.ReactElement {
                         약관동의1<S.TermsRequired> (필수)</S.TermsRequired>
                     </>
                 </S.TermsTxt>
-                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: TermTxt }}></S.ModalTermContent>
+                <S.ModalTermContent dangerouslySetInnerHTML={{ __html: 'aa' }}></S.ModalTermContent>
             </S.ModalCommonWrap>
 
             <S.ModalAgreeWrap>
