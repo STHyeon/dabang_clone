@@ -8,7 +8,7 @@ export interface CardProps {
     CardType?: string; // 카트 유형 선택
     to?: string; // 이동 페이지
     imgSrc?: string; // 이미지 주소
-    alt: string; // 이미지 설명
+    alt?: string; // 이미지 설명
     title?: string | number; // 제목
     noneTitle?: string; // 제목
     address?: string; // 상품 주소
