@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { device } from 'utils/style/media';
 import { Btn } from 'components';
 
 interface Props {
@@ -14,24 +13,6 @@ export const Container = styled.div`
     padding: 0 16px;
     border-bottom: 1px solid #ebebeb;
     line-height: 70px;
-
-    @media ${device.pc} {
-        padding: 0;
-    }
-
-    @media ${device.mb} {
-        height: 44px;
-        padding: 0 16px;
-        line-height: 44px;
-
-        .fl_l img {
-            width: 50px;
-        }
-
-        .fl_r img {
-            width: 24px;
-        }
-    }
 `;
 
 export const HeaderWrapper = styled.div<Props>`
@@ -39,11 +20,9 @@ export const HeaderWrapper = styled.div<Props>`
 
     li {
         display: inline-block;
-    }
 
-    @media ${device.pc} {
-        li {
-            padding: 0 5px;
+        & + li {
+            margin: 0 0 0 20px;
         }
     }
 
@@ -52,15 +31,6 @@ export const HeaderWrapper = styled.div<Props>`
         css`
             & + div {
                 margin: 0 0 0 22px;
-
-                @media ${device.pc} {
-                    margin: 0;
-
-                    span {
-                        padding: 0 6px 0 8px;
-                        font-size: 12px;
-                    }
-                }
             }
         `}
 
@@ -69,17 +39,6 @@ export const HeaderWrapper = styled.div<Props>`
         css`
             & + div {
                 margin: 0 0 0 9.1%;
-
-                @media ${device.pc} {
-                    margin: 0 0 0 2%;
-                }
-            }
-
-            @media ${device.pc} {
-                span {
-                    padding: 0 8px;
-                    font-size: 12px;
-                }
             }
         `}
 `;
@@ -88,10 +47,6 @@ export const NavBox = styled.nav`
     float: right;
     width: calc(100% - 400px);
     text-align: right;
-
-    @media ${device.pc} {
-        width: calc(100% - 320px);
-    }
 `;
 
 export const SideNavBox = styled.div<Props>`
