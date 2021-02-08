@@ -4,8 +4,6 @@ import * as S from './style';
 import { Card } from 'components';
 import { CardProps } from '../../molecules/Card';
 
-import { RECENTLYROOMTEXT, RECENTLYCOMPLEXTEXT } from 'utils/contents/string';
-
 export interface CardGridProps {
     data?: CardProps[]; // 카드 데이터
     boxWidth?: string; // 카드 크기
@@ -19,33 +17,12 @@ export function CardGrid({ data, boxWidth, cardGroup, cardImgHeight }: CardGridP
             {data && (
                 <>
                     {data.map((CardData: CardProps, index: number) => {
-                        const { CardType, to, title, chkDate, description1, description2, address, room, roomInfo, FlagValid, Flag, imgSrc, alt, complexData, ableRoom } = CardData;
-                        return (
-                            <Card
-                                key={index}
-                                CardType={CardType}
-                                to={to}
-                                title={title}
-                                chkDate={chkDate}
-                                description1={description1}
-                                description2={description2}
-                                address={address}
-                                room={room}
-                                roomInfo={roomInfo}
-                                FlagValid={FlagValid}
-                                Flag={Flag}
-                                imgSrc={imgSrc}
-                                alt={alt}
-                                complexData={complexData}
-                                ableRoom={ableRoom}
-                                cardImgHeight={cardImgHeight}
-                            />
-                        );
+                        return <Card {...CardData} />;
                     })}
                 </>
             )}
-            {cardGroup === 'room' && <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />}
-            {cardGroup === 'complex' && <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />}
+            {cardGroup === 'room' && <Card CardType="type05" to="/" noneTitle="최근 본 지역의 다른 방을 찾아보세요" />}
+            {cardGroup === 'complex' && <Card CardType="type05" to="/" noneTitle="최근 본 지역의 다른 단지를 찾아보세요" />}
         </S.GridItem>
     );
 }
