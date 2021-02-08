@@ -11,11 +11,11 @@ export { Card } from './molecules/Card';
 export { FormInput } from './molecules/FormInput';
 export { GNB } from './molecules/GNB';
 export { ImgBtn } from './molecules/ImgBtn';
-export { LoginModal, RegisterModal, TermModal } from './molecules/ModalItem';
+export { LoginItemModal, RegisterItemModal, TermItemModal } from './molecules/ModalItem';
 
 export { Header } from './organisms/Header';
 export { Footer } from './organisms/Footer';
 export { CardGrid } from './organisms/CardGrid';
 export { Boxes } from './organisms/Boxes';
 export { Slick } from './organisms/Slider';
-export { Modal } from './organisms/Modal';
+export { LoginModal, RegisterModal, TermModal } from './organisms/Modal';
