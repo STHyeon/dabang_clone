@@ -1,14 +1,14 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react/types-6-0';
 
-import { Modal, ModalProps } from './index';
+import { LoginModal, RegisterModal, TermModal, ModalProps } from './index';
 
 export default {
-    title: 'Organisms/Modal',
-    component: Modal
+    title: 'Organisms/Modal'
 } as Meta;
 
-const Template: Story<ModalProps> = (args) => <Modal {...args} />;
+export const Login = () => <LoginModal />;
 
-export const general = Template.bind({});
-general.args = {};
+export const Register = () => <RegisterModal />;
+
+export const Term = () => <TermModal />;

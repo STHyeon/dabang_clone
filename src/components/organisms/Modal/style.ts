@@ -13,8 +13,9 @@ export const ModalInner = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 420px;
-    padding: 50px 35px 0;
+    max-width: 600px;
+    width: 90%;
+    padding: 50px 35px 40px;
     transform: translate(-50%, -50%);
     background: #fff;
 `;
