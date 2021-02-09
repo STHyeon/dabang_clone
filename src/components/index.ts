@@ -4,7 +4,6 @@ export { Img } from './atoms/Img';
 export { Input } from './atoms/Input';
 export { EventDate } from './atoms/EventDate';
 export { Label } from './atoms/Label';
-export { GNBItem } from './atoms/GNBItem';
 export { KakaoMap } from './atoms/KakaoMap';
 
 export { Card } from './molecules/Card';

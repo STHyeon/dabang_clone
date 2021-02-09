@@ -1,0 +1,24 @@
+{
+    "positions": [
+        {
+            "title": "카카오",
+            "latitude": 33.450705,
+            "longitude": 126.570677
+        },
+        {
+            "title": "생태연못",
+            "latitude": 33.450936,
+            "longitude": 126.569477
+        },
+        {
+            "title": "텃밭",
+            "latitude": 33.450879,
+            "longitude": 126.56994
+        },
+        {
+            "title": "근린공원",
+            "latitude": 33.451393,
+            "longitude": 126.570738
+        }
+    ]
+}

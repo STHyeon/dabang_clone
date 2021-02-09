@@ -8,5 +8,5 @@ export default {
     title: 'Organisms/CardGrid'
 } as Meta;
 
-const general = (args: CardGridProps) => <CardGrid {...args} />;
+export const general = (args: CardGridProps) => <CardGrid {...args} />;
 general.args = { data: Type02CardData, boxWidth: '27%' };
