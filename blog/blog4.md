@@ -773,7 +773,7 @@ export interface CardProps {
     CardType?: string; // 카트 유형 선택
     to?: string; // 이동 페이지
     imgSrc?: string; // 이미지 주소
-    alt: string; // 이미지 설명
+    alt?: string; // 이미지 설명
     title?: string | number; // 제목
     noneTitle?: string; // 제목
     address?: string; // 상품 주소
@@ -1010,6 +1010,18 @@ ChkSeeComplex.args = {
 ```
 <br />
 
-웬만한 내용은 주석에 있고 Card만 나중에 리팩토링을 하게 되면 더 자세히 글을 작성하겠습니다.<br />
+간단한 설명은 주석에 있고 Card만 나중에 리팩토링을 하게 되면 더 자세히 글을 작성하겠습니다.<br />
 
+다른 곳에서 사용하기 위해 components/index.ts에 Molecules를 추가해 줍니다.
+<br />
+
+```javascript
+// index.ts
+
+export { Card } from './molecules/Card';
+export { FormInput } from './molecules/FormInput';
+export { LoginModal, RegisterModal, TermModal } from './molecules/ModalItem';
+```
+
+<br />
 이것으로 Molecules 제작을 완료하였습니다. 다음 글에서는 Organisms를 제작해보겠습니다.
