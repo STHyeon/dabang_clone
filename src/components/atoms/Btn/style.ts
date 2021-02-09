@@ -20,6 +20,7 @@ const BtnCSS = css<BtnProps>`
     cursor: pointer;
 
     &:disabled {
+        border: 0;
         color: #ffffff;
         background: #b9b9b9;
         cursor: default;
@@ -40,7 +41,7 @@ const BtnCSS = css<BtnProps>`
         css`
             border-color: #1a5ae8;
         `}
-
+    
     ${(props) =>
         props.btnType === 'border_none' &&
         css`

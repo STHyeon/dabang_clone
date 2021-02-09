@@ -3,8 +3,8 @@ import * as S from './style';
 import { DateFormat1, DateFormat2 } from 'utils/DateFormat';
 
 export interface EventDateProps {
-    eventDateType?: string;
-    dateAt?: Date;
+    eventDateType: string;
+    dateAt: Date;
 }
 
 export function EventDate({ eventDateType, dateAt }: EventDateProps): React.ReactElement {

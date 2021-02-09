@@ -22,8 +22,8 @@ defaultBtn.args = {
     disabled: false
 };
 
-export const linktBtn = (args: LinkBtnProps) => <LinkBtn {...args} btnOnClick={action('Button is clicked!')} />;
-linktBtn.args = {
+export const linkBtn = (args: LinkBtnProps) => <LinkBtn {...args} btnOnClick={action('Button is clicked!')} />;
+linkBtn.args = {
     children: '테스트',
     disabled: false,
     btnLink: ''

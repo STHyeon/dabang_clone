@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-
 import * as S from './style';
+
 declare const kakao: any; // for using kakao map sdk
 
+// 위치 데이터 type 정의
 interface PositionProps {
     title: string;
     latitude: number;
@@ -15,11 +16,7 @@ export interface KakaoMapProps {
     height?: string;
 }
 
-export function KakaoMap({
-    address,
-    positions,
-    height = '100%'
-}: KakaoMapProps): React.ReactElement {
+export function KakaoMap({ address, positions, height = '100%' }: KakaoMapProps): React.ReactElement {
     const kakaoMapRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

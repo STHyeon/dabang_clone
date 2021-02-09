@@ -4,7 +4,7 @@ import * as S from './style';
 export interface BtnProps {
     children?: React.ReactElement | string; // 버튼 내용 또는 엘리먼트
     disabled?: boolean; //disabled 여부
-    btnType: string; // button styling type (ex. priamry, disable)
+    btnType?: string; // button styling type (ex. priamry, disable)
     btnOnClick?: () => void; // 클릭 이벤트
 }
 
