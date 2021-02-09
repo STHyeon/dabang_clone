@@ -27,8 +27,8 @@ export function FormInput({ children, invalid, captionContent, htmlFor, inputTit
                 </S.FormInputContainer>
             ) : (
                 <S.FormInputContainer>
-                    <S.FormBtn btnType="border_none">{buttonContent ? buttonContent : <S.SearchIcon src={BgIcon} alt="검색 아이콘" />}</S.FormBtn>
                     <S.FormInput description={inputTitle} {...props} />
+                    <S.FormBtn btnType="border_none">{buttonContent ? buttonContent : <S.SearchIcon src={BgIcon} alt="검색 아이콘" />}</S.FormBtn>
                 </S.FormInputContainer>
             )}
         </>

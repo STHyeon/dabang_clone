@@ -50,7 +50,7 @@ export function Card({
         <S.CardWrapper CardType={CardType} boxWidth={boxWidth} {...props}>
             {to ? (
                 <S.LinkWrapper to="">
-                    {imgSrc && (
+                    {imgSrc && alt && (
                         <S.ImgWrapper cardImgHeight={cardImgHeight}>
                             <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
