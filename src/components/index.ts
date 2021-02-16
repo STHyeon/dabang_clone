@@ -8,8 +8,6 @@ export { KakaoMap } from './atoms/KakaoMap';
 
 export { Card } from './molecules/Card';
 export { FormInput } from './molecules/FormInput';
-export { GNB } from './molecules/GNB';
-export { ImgBtn } from './molecules/ImgBtn';
 export { LoginItemModal, RegisterItemModal, TermItemModal } from './molecules/ModalItem';
 
 export { Header } from './organisms/Header';
