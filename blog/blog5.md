@@ -367,4 +367,552 @@ export const Term = () => <TermModal />;
 ```
 <br />
 
+### 헤더(Header)
+다방에 모바일 버전에 헤더는 없습니다. 하지만 저는 있으면 좋겠다고 생각해 <u>햄버거 메뉴를 추가했습니다.</u> 빼셔도 상관은 없습니다.<br />
 
+파일들 위치: Organisms/Header
+
+```javascript
+// style.ts
+
+import styled, { css } from 'styled-components';
+import { Btn } from 'components';
+
+interface Props {
+    fl_l?: boolean;
+    fl_r?: boolean;
+    isSideNav?: boolean;
+}
+
+export const Container = styled.div`
+    width: 100%;
+    height: 70px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ebebeb;
+    line-height: 70px;
+`;
+
+export const HeaderWrapper = styled.div<Props>`
+    display: inline-block;
+
+    li {
+        display: inline-block;
+
+        & + li {
+            margin: 0 0 0 20px;
+        }
+    }
+
+    ${(props) =>
+        props.fl_l &&
+        css`
+            & + div {
+                margin: 0 0 0 22px;
+            }
+        `}
+
+    ${(props) =>
+        props.fl_r &&
+        css`
+            & + div {
+                margin: 0 0 0 9.1%;
+            }
+        `}
+`;
+
+export const NavBox = styled.nav`
+    float: right;
+    width: calc(100% - 400px);
+    text-align: right;
+`;
+
+export const SideNavBox = styled.div<Props>`
+    position: fixed;
+    top: 0;
+    right: -100%; /* default -100% */
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: right 0.25s ease-in;
+
+    ${(props) =>
+        props.isSideNav &&
+        css`
+            right: 0;
+        `}
+`;
+
+export const UserTop = styled.div`
+    padding: 60px 18px 20px;
+    background: #1c0883;
+`;
+
+export const AuthBtn = styled(Btn)`
+    width: 100%;
+    height: 44px;
+    border: 1px solid #3983fe;
+`;
+
+export const MNavBox = styled.nav`
+    padding: 0 16px;
+
+    li {
+        display: block;
+        width: 100%;
+        padding: 7px 0;
+
+        & + li {
+            border-top: 1px solid #e3e3e3;
+        }
+    }
+`;
+
+export const SideNavClose = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    width: 24px;
+    height: 25px;
+    line-height: 0;
+`;
+
+```
+<br />
+
+```javascript
+//  index.tsx
+
+import React, { useState } from 'react';
+import logo from 'assets/images/logo.png';
+import mene_all from 'assets/images/btn_mene_all.png';
+import mene_all_close from 'assets/images/btn_mene_all_close.png';
+import * as S from './style';
+import { Btn, Img } from 'components';
+
+export function Header(): React.ReactElement {
+    const [isSideNav, setIsSideNav] = useState<boolean>(false);
+
+    const handleSide = (): void => {
+        setIsSideNav(!isSideNav);
+    };
+
+    return (
+        <S.Container>
+            <div className="pc clearfix">
+                <div className="fl_l">
+                    <S.HeaderWrapper fl_l>
+                        <Btn btnType="border_none">
+                            <Img src={logo} alt="로고" />
+                        </Btn>
+                    </S.HeaderWrapper>
+                    <S.HeaderWrapper fl_l>
+                        <ul>
+                            <li>프로중개사 사이트</li>
+                            <li>다방허브 사이트</li>
+                        </ul>
+                    </S.HeaderWrapper>
+                </div>
+                <S.NavBox>
+                    <S.HeaderWrapper fl_r>
+                        <ul>
+                            <li>방찾기</li>
+                            <li>분양</li>
+                            <li>관심목록</li>
+                            <li>방내놓기</li>
+                            <li>알림</li>
+                        </ul>
+                    </S.HeaderWrapper>
+                    <S.HeaderWrapper fl_r>
+                        <ul>
+                            <li>회원가입 · 로그인</li>
+                        </ul>
+                    </S.HeaderWrapper>
+                </S.NavBox>
+            </div>
+
+            {/* 여기서부터 햄버거 메뉴입니다. */}
+            <div className="mobile clearfix">
+                <div className="fl_l">
+                    <Btn btnType="border_none">
+                        <Img src={logo} alt="로고" />
+                    </Btn>
+                </div>
+                <div className="fl_r">
+                    <Btn btnType="border_none" btnOnClick={handleSide}>
+                        <Img src={mene_all} alt="햄버거 메뉴" />
+                    </Btn>
+                </div>
+            </div>
+
+            <S.SideNavBox isSideNav={isSideNav}>
+                <S.UserTop>
+                    <S.AuthBtn btnType="default">회원가입 · 로그인</S.AuthBtn>
+                </S.UserTop>
+                <S.MNavBox>
+                    <ul>
+                        <li>방찾기</li>
+                        <li>분양</li>
+                        <li>관심목록</li>
+                        <li>방내놓기</li>
+                        <li>알림</li>
+                    </ul>
+                </S.MNavBox>
+                <S.SideNavClose>
+                    <Btn btnType="border_none" btnOnClick={handleSide}>
+                        <Img src={mene_all_close} alt="닫기" />
+                    </Btn>
+                </S.SideNavClose>
+            </S.SideNavBox>
+        </S.Container>
+    );
+}
+```
+<br />
+햄버거 메뉴는 제외하고 만드셔도 됩니다.<br />
+그 외 class는 [github - css](https://github.com/STHyeon/dabang_clone/blob/develop/src/assets/scss/project.scss)를 참고해주시면 될 것 같습니다.
+<br />
+
+```javascript
+// index.stories.tsx
+
+import React from 'react';
+import { Meta } from '@storybook/react';
+
+import { Header } from './index';
+
+export default {
+    title: 'Organisms/Header',
+    component: Header
+} as Meta;
+
+export const general = () => <Header />;
+
+```
+<br />
+
+### 푸터(Footer)
+Footer 같은 경우는 따로 설명할 부분이 없어 코드만 써두고 넘어가겠습니다. <br />
+
+파일들 위치: Organisms/Footer
+```javascript
+// style.ts
+
+import styled from 'styled-components';
+import { Btn } from 'components';
+
+export const Container = styled.div`
+    padding: 30px 16px 40px;
+    background: #373737;
+
+    span + span {
+        padding: 0 0 0 15px;
+    }
+
+    .mb10 {
+        margin: 0 0 18px;
+    }
+`;
+
+export const Detail = styled.div`
+    line-height: 18px;
+    color: #a0a0a0;
+
+    > div,
+    span {
+        font-size: 12px;
+    }
+`;
+
+export const Btns = styled(Btn)`
+    width: auto;
+    height: 30px;
+    margin: 9px 0 0;
+    padding: 0 9px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 30px;
+    background: rgb(81, 81, 81);
+    color: rgb(204, 204, 204);
+
+    & + & {
+        margin: 9px 0 0 8px;
+    }
+`;
+
+export const Right = styled.div`
+    margin: 20px 0 0;
+    font-size: 12px;
+    color: #858585;
+`;
+
+export const ProudTxt = styled.div`
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 6px 0 0;
+    color: #a0a0a0;
+`;
+
+export const AuthIcon = styled.div`
+    display: inline-block;
+    width: 51px;
+    height: 39px;
+    vertical-align: top;
+`;
+
+export const DetailBox = styled.div`
+    float: left;
+`;
+
+export const Certify = styled.div`
+    float: right;
+    margin: 10px 0 0;
+    font-size: 12px;
+`;
+
+```
+<br />
+
+```javascript
+// index.tsx
+
+
+import React from 'react';
+
+import * as S from './style';
+import { Img } from 'components/atoms/Img';
+import KS from 'assets/images/k55qi.png';
+
+export function Footer(): React.ReactElement {
+    return (
+        <S.Container className="inner clearfix">
+            <S.DetailBox>
+                <S.Detail>
+                    <div>(주)스테이션</div>
+                    <div>대표: 한유순, 유형석</div>
+                    <div>
+                        <span>사업자 번호: 220-88-59156</span>
+                        <span>통신판매업신고번호: 88제2013-서울 강남-02884호</span>
+                    </div>
+                    <div className="mb10">주소 : 서울시 서초구 서초대로 301 동익 성봉빌딩 10층 (주)스테이션3</div>
+                    <div>
+                        <span>고객센터: 02-1899-6840</span>
+                        <span>(평일 10:00 ~ 18:30 토•일요일, 공휴일 휴무)</span>
+                    </div>
+                    <div>
+                        <span>팩스 : 02-554-9774</span>
+                        <span>프로모션/사업 제휴문의 : biz@station3.co.kr</span>
+                        <span>허위매물 신고 : clean@dabangapp.com</span>
+                    </div>
+                </S.Detail>
+
+                <S.Btns btnType="border_none">자주 묻는 질문</S.Btns>
+                <S.Btns btnType="border_none">1:1 문의</S.Btns>
+                <S.Right>Station3, Inc. All rights reserved.</S.Right>
+            </S.DetailBox>
+            <S.Certify>
+                <S.AuthIcon>
+                    <Img src={KS} alt="아이콘" />
+                </S.AuthIcon>
+                <S.ProudTxt>
+                    다방, 2019년 한국서비스품질지수
+                    <br />
+                    부동산 중개 앱 1위 선정
+                </S.ProudTxt>
+            </S.Certify>
+        </S.Container>
+    );
+}
+
+```
+<br />
+
+```javascript
+// index.stories.tsx
+
+import React from 'react';
+import { Meta } from '@storybook/react';
+
+import { Footer } from './index';
+
+export default {
+    title: 'Organisms/Footer'
+} as Meta;
+
+export const general = () => <Footer />;
+
+```
+<br />
+
+### 슬라이드(Slider)
+Organisms의 마지막인 슬라이드입니다.<br />
+
+파일 위치: Organisms/Slider
+```javascript
+// style.ts
+
+import styled from 'styled-components';
+
+interface Props {
+    boxWidth?: string; // box 크기
+}
+
+export const GridItem = styled.div<Props>`
+    .slick-slider {
+        .slick-dots {
+            margin: 15px 0 0;
+            text-align: center;
+
+            li {
+                display: inline-block;
+
+                &.slick-active button {
+                    border-color: #185cbe;
+                    background: #185cbe;
+                }
+
+                & + li {
+                    margin: 0 0 0 10px;
+                }
+
+                button {
+                    width: 30px;
+                    padding: 5px 0 0;
+                    border-radius: 20px;
+                    font-size: 0;
+                }
+            }
+        }
+
+        .slick-slide {
+            width: ${(props) => props.boxWidth && props.boxWidth};
+            margin: 0 15px;
+        }
+    }
+`;
+```
+<br />
+
+index.tsx를 작성하기 전에, <span style="background: light-green;">react-slick</span>를 설치해줍니다. <br />
+slick은 [slick 공식문서](https://kenwheeler.github.io/slick/)를 참고해 주시면 됩니다.
+
+```javascript
+// index.tsx
+
+import React from 'react';
+import Slider from 'react-slick';
+import * as S from './style';
+import { setSlick } from 'utils/settings/setSlick';
+import { Card } from 'components';
+import { CardProps } from '../../molecules/Card';
+
+import { RECENTLYROOMTEXT, RECENTLYCOMPLEXTEXT } from 'utils/contents/string';
+
+export interface SlickProps {
+    data?: CardProps[]; // 카드 데이터
+    boxWidth?: string; // 카드 크기
+    cardImgHeight?: string; // 카드 이미지 크기
+    cardGroup?: string; // 방/단지 구분
+    slidesToScroll?: number; // 슬라이드 보여줄 수
+    slidesToShow?: number; // 슬라이드 넘길 수
+}
+
+export function Slick({ data, boxWidth, cardGroup, cardImgHeight, slidesToScroll = 4, slidesToShow = 4 }: SlickProps): React.ReactElement {
+    if (slidesToScroll || slidesToShow) {
+        setSlick.slidesToScroll = slidesToScroll;
+        setSlick.slidesToShow = slidesToShow;
+    }
+
+    return (
+        <S.GridItem boxWidth={boxWidth}>
+            {data && (
+                <Slider {...setSlick}>
+                    {data.map((CardData: CardProps, index: number) => {
+                        return <Card {...CardData} />;
+                    })}
+                    {cardGroup === 'room' && <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />}
+                    {cardGroup === 'complex' && <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />}
+                </Slider>
+            )}
+        </S.GridItem>
+    );
+}
+```
+<br />
+
+```javascript
+// utils/settings/setSlick
+
+export const setSlick = {
+    dots: true,
+    infinite: false,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    centerMode: false,
+    variableWidth: true,
+    responsive: [
+        {
+            breakpoint: 1920,
+            settings: {
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 1040,
+            settings: {
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 830,
+            settings: {
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
+
+```
+
+<br />
+
+```javascript
+// index.stories.tsx
+
+import React from 'react';
+import { Meta } from '@storybook/react';
+
+import { Slick, SlickProps } from './index';
+import { Type02CardData } from 'utils/contents/data';
+
+export default {
+    title: 'Organisms/Slick'
+} as Meta;
+
+export const general = (args: SlickProps) => <Slick {...args} />;
+general.args = { data: Type02CardData, boxWidth: '185px', slidesToShow: 7, slidesToScroll: 7 };
+
+```
+<br />
+
+이것으로 Organisms를 마치겠습니다.<br />
+다음 글이 마지막으로 지금까지 만든 것을 합치는 내용입니다.
+<br />
+<br />
