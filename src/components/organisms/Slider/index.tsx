@@ -16,14 +16,7 @@ export interface SlickProps {
     slidesToShow?: number; // 슬라이드 넘길 수
 }
 
-export function Slick({
-    data,
-    boxWidth,
-    cardGroup,
-    cardImgHeight,
-    slidesToScroll = 4,
-    slidesToShow = 4
-}: SlickProps): React.ReactElement {
+export function Slick({ data, boxWidth, cardGroup, cardImgHeight, slidesToScroll = 4, slidesToShow = 4 }: SlickProps): React.ReactElement {
     if (slidesToScroll || slidesToShow) {
         setSlick.slidesToScroll = slidesToScroll;
         setSlick.slidesToShow = slidesToShow;
@@ -34,51 +27,10 @@ export function Slick({
             {data && (
                 <Slider {...setSlick}>
                     {data.map((CardData: CardProps, index: number) => {
-                        const {
-                            CardType,
-                            to,
-                            title,
-                            chkDate,
-                            description1,
-                            description2,
-                            address,
-                            room,
-                            roomInfo,
-                            FlagValid,
-                            Flag,
-                            imgSrc,
-                            alt,
-                            complexData,
-                            ableRoom
-                        } = CardData;
-                        return (
-                            <Card
-                                key={index}
-                                CardType={CardType}
-                                to={to}
-                                title={title}
-                                chkDate={chkDate}
-                                description1={description1}
-                                description2={description2}
-                                address={address}
-                                room={room}
-                                roomInfo={roomInfo}
-                                FlagValid={FlagValid}
-                                Flag={Flag}
-                                imgSrc={imgSrc}
-                                alt={alt}
-                                complexData={complexData}
-                                ableRoom={ableRoom}
-                                cardImgHeight={cardImgHeight}
-                            />
-                        );
+                        return <Card {...CardData} />;
                     })}
-                    {cardGroup === 'room' && (
-                        <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />
-                    )}
-                    {cardGroup === 'complex' && (
-                        <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />
-                    )}
+                    {cardGroup === 'room' && <Card CardType="type05" to="/" noneTitle={RECENTLYROOMTEXT} />}
+                    {cardGroup === 'complex' && <Card CardType="type05" to="/" noneTitle={RECENTLYCOMPLEXTEXT} />}
                 </Slider>
             )}
         </S.GridItem>
