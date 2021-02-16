@@ -912,6 +912,31 @@ general.args = { data: Type02CardData, boxWidth: '185px', slidesToShow: 7, slide
 ```
 <br />
 
+마지막으로 components/index.ts에 Organisms를 추가해줍니다.<br />
+```javascript
+// index.ts
+
+export { Btn, LinkBtn } from './atoms/Btn';
+export { Icon } from './atoms/Icon';
+export { Img } from './atoms/Img';
+export { Input } from './atoms/Input';
+export { EventDate } from './atoms/EventDate';
+export { Label } from './atoms/Label';
+export { KakaoMap } from './atoms/KakaoMap';
+
+export { Card } from './molecules/Card';
+export { FormInput } from './molecules/FormInput';
+export { LoginItemModal, RegisterItemModal, TermItemModal } from './molecules/ModalItem';
+
+export { Header } from './organisms/Header';
+export { Footer } from './organisms/Footer';
+export { CardGrid } from './organisms/CardGrid';
+export { Boxes } from './organisms/Boxes';
+export { Slick } from './organisms/Slider';
+export { LoginModal, RegisterModal, TermModal } from './organisms/Modal';
+
+```
+
 이것으로 Organisms를 마치겠습니다.<br />
 다음 글이 마지막으로 지금까지 만든 것을 합치는 내용입니다.
 <br />
