@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react';
 
 import { Label, LabelProps } from './index';
 
@@ -7,10 +7,9 @@ export default {
     title: 'Atoms/Label'
 } as Meta;
 
-const Template: Story<LabelProps> = (args) => <Label {...args} />;
-
-export const general = Template.bind({});
+export const general = (args: LabelProps) => <Label {...args} />;
 general.args = {
-    children: '이메일',
-    required: false
+    children: '라벨',
+    required: false,
+    htmlFor: 'ex'
 };

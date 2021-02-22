@@ -1,65 +1,36 @@
 import React from 'react';
-
 import * as S from './style';
-import { Label, Img } from 'components';
 import BgIcon from 'assets/images/search.svg';
 
 export interface FormInputProps {
-    FormInputType?: string; // 타입선택
-    labelName?: string; // label 내용
-    htmlfor?: string; // 접근성
-    invalid?: boolean; // 오류 체크
+    htmlFor?: string; // Input 연결
+    children?: string | React.ReactElement; // label 내용
     disabled?: boolean; // disabled on/off
-    required?: boolean; // 필수 값
-    defaultValue?: string; // 기본 값
+    required?: boolean; // 필수 여부
     placeholder?: string; // 유도글
-    value?: string; // 값
-    src?: string; // 이미지 경로
-    alt?: string; // 이미지 설명
+    invalid?: boolean; // 오류 체크
     captionContent?: string; // 오류 메세지
-    styletype?: string; // 버튼 스타일
-    btnText?: string; // 버튼 텍스트
-    bgIcon?: boolean; // 백이미지 on/off
-    description?: string; // input title 내용
-    inputHeight?: string; // input height 설정
+    inputTitle?: string; // 접근성
+    buttonContent?: string; // 버튼 내용
 }
 
-export function FormInput({ FormInputType, captionContent, labelName, htmlfor, inputHeight, src, alt, styletype, btnText, bgIcon, description, ...props }: FormInputProps): React.ReactElement {
+export function FormInput({ children, invalid, captionContent, htmlFor, inputTitle, buttonContent, ...props }: FormInputProps): React.ReactElement {
     return (
-        <S.FormInputContainer>
-            {FormInputType === 'type01' && (
-                <>
-                    <Label htmlfor={htmlfor} {...props}>
-                        {labelName}
-                    </Label>
-                    <S.FormInput inputHeight={inputHeight} {...props} />
-                    {captionContent && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
-                </>
+        <>
+            {children && htmlFor ? (
+                <S.FormInputContainer>
+                    <S.FormLabel htmlFor={htmlFor} {...props}>
+                        {children}
+                    </S.FormLabel>
+                    <S.FormInput id={htmlFor} {...props} />
+                    {invalid && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
+                </S.FormInputContainer>
+            ) : (
+                <S.FormInputContainer>
+                    <S.FormInput description={inputTitle} {...props} />
+                    <S.FormBtn btnType="border_none">{buttonContent ? buttonContent : <S.SearchIcon src={BgIcon} alt="검색 아이콘" />}</S.FormBtn>
+                </S.FormInputContainer>
             )}
-
-            {FormInputType === 'type02' && (
-                <>
-                    {labelName && (
-                        <Label htmlfor={htmlfor} {...props}>
-                            {labelName}
-                        </Label>
-                    )}
-                    <S.IncludeBtn type02>
-                        {bgIcon ? (
-                            <>
-                                <S.IconWrapper src={BgIcon} alt="돋보기 배경 아이콘" />
-                                <S.FormInput type02 inputHeight={inputHeight} {...props} />
-                            </>
-                        ) : (
-                            <S.FormInput description={description} inputHeight={inputHeight} {...props} />
-                        )}
-                        <S.FormBtn type02 styletype={styletype}>
-                            {src ? <Img src={src} alt={alt} /> : `${btnText}`}
-                        </S.FormBtn>
-                    </S.IncludeBtn>
-                    {captionContent && <S.FormCaption {...props}>{captionContent}</S.FormCaption>}
-                </>
-            )}
-        </S.FormInputContainer>
+        </>
     );
 }

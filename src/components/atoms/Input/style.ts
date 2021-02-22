@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
 
-interface Props {
+interface InputProps {
     invalid?: boolean;
-    inputHeight?: string;
+    height?: string;
 }
 
-export const Input = styled.input<Props>`
-    height: ${(props) => props.inputHeight && props.inputHeight};
+export const Input = styled.input<InputProps>`
+    height: ${(props) => (props.height ? props.height : '33px')};
     border-radius: 2px;
+    background: #ffffff;
 
     &:focus {
         outline: none;

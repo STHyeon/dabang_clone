@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device } from 'utils/style/media';
+import { FormInput } from 'components';
 
 interface Props {
     type01?: boolean;
@@ -14,15 +14,28 @@ export const MainText = styled.div`
     font-size: 46px;
     line-height: 58px;
     text-align: center;
-
-    @media ${device.mb} {
-        font-size: 18px;
-        line-height: 25px;
-    }
 `;
 
 export const MainStrongText = styled.span`
     color: #1564f9;
+`;
+
+export const MainSearchInput = styled(FormInput)`
+    height: 60px;
+    padding: 0 125px 0 15px !important;
+    border: 1px solid rgb(208, 210, 214);
+
+    & + button {
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        transform: translateY(-50%);
+        width: 95px;
+        max-height: 48px;
+        line-height: 48px;
+        color: #ffffff;
+        background: rgb(19, 116, 248);
+    }
 `;
 
 export const ListText = styled.div<Props>`
@@ -31,10 +44,6 @@ export const ListText = styled.div<Props>`
         css`
             margin: 0 0 2px;
             font-size: 28px;
-
-            @media ${device.mb} {
-                font-size: 17px;
-            }
         `}
 
     ${(props) =>
@@ -42,10 +51,6 @@ export const ListText = styled.div<Props>`
         css`
             margin: 0 0 20px;
             color: #666666;
-
-            @media ${device.mb} {
-                font-size: 12px;
-            }
         `}
 `;
 

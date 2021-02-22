@@ -4,13 +4,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Card, CardProps } from './index';
 import TestImg from 'assets/images/test.png';
 
-import {
-    MORESEECOMPLEXTEXT,
-    RECENTLYCOMPLEXTEXT,
-    MORESEEROOMTEXT,
-    RECENTLYROOMTEXT
-} from 'utils/contents/string';
-
 export default {
     title: 'Molecules/Card'
 } as Meta;
@@ -38,6 +31,7 @@ Detail1.args = {
     roomInfo: '래미안',
     to: '/',
     imgSrc: `${TestImg}`,
+    alt: 'test',
     description1: '반지층, 라라라',
     description2: '밥밥지지츠츠',
     chkDate: Now,
@@ -53,6 +47,7 @@ Detail2.args = {
     roomInfo: '510세대',
     description1: 'ㅁㅁㅁㅁ',
     imgSrc: `${TestImg}`,
+    alt: 'test',
     ableRoom: 4,
     complexData: true,
     chkDate: Now,
@@ -64,6 +59,7 @@ Detail3.args = {
     CardType: 'type04',
     to: '/',
     imgSrc: `${TestImg}`,
+    alt: 'test',
     description1: '보증금',
     description2: '5억',
     boxWidth: '185px'
@@ -73,7 +69,7 @@ export const SeeRoom = Template.bind({});
 SeeRoom.args = {
     CardType: 'type05',
     to: '',
-    noneTitle: MORESEEROOMTEXT,
+    noneTitle: '아직 못 본 더 많은 방이 있어요.',
     boxWidth: '280px'
 };
 
@@ -81,7 +77,7 @@ export const SeeComplex = Template.bind({});
 SeeComplex.args = {
     CardType: 'type05',
     to: '',
-    noneTitle: MORESEECOMPLEXTEXT,
+    noneTitle: '아직 못 본 더 많은 단지가 있어요.',
     boxWidth: '280px'
 };
 
@@ -89,7 +85,7 @@ export const ChkSeeRoom = Template.bind({});
 ChkSeeRoom.args = {
     CardType: 'type05',
     to: '/',
-    noneTitle: RECENTLYROOMTEXT,
+    noneTitle: '최근 본 지역의 다른 방을 찾아보세요',
     boxWidth: '280px'
 };
 
@@ -97,6 +93,6 @@ export const ChkSeeComplex = Template.bind({});
 ChkSeeComplex.args = {
     CardType: 'type05',
     to: '/',
-    noneTitle: RECENTLYCOMPLEXTEXT,
+    noneTitle: '최근 본 지역의 다른 단지를 찾아보세요',
     boxWidth: '280px'
 };

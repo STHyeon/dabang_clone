@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Btn } from 'components';
-import { device } from 'utils/style/media';
 
 export const Container = styled.div`
     padding: 30px 16px 40px;
@@ -8,13 +7,6 @@ export const Container = styled.div`
 
     span + span {
         padding: 0 0 0 15px;
-    }
-
-    @media ${device.mb} {
-        span + span {
-            display: block;
-            padding: 0;
-        }
     }
 
     .mb10 {
@@ -33,10 +25,15 @@ export const Detail = styled.div`
 `;
 
 export const Btns = styled(Btn)`
+    width: auto;
     height: 30px;
-    padding: 0 9px;
-    font-size: 12px;
     margin: 9px 0 0;
+    padding: 0 9px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 30px;
+    background: rgb(81, 81, 81);
+    color: rgb(204, 204, 204);
 
     & + & {
         margin: 9px 0 0 8px;
@@ -65,18 +62,10 @@ export const AuthIcon = styled.div`
 
 export const DetailBox = styled.div`
     float: left;
-
-    @media ${device.mb} {
-        float: none;
-    }
 `;
 
 export const Certify = styled.div`
     float: right;
     margin: 10px 0 0;
     font-size: 12px;
-
-    @media ${device.mb} {
-        float: none;
-    }
 `;

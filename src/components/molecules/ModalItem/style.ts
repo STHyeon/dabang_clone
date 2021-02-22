@@ -5,11 +5,12 @@ import CheckOff from 'assets/images/checkoff.svg';
 import CheckOn from 'assets/images/checkon.svg';
 
 export const ModalCommonTitle = styled.h2`
-    height: 80px;
-    padding: 0 30px;
+    /* height: 80px; */
+    margin: 0 0 30px;
+    padding: 0 0 15px;
     border-bottom: 1px solid #ebebeb;
     font-size: 22px;
-    line-height: 80px;
+    /* line-height: 80px; */
 `;
 
 export const ModalLoginTitle = styled.h2`
@@ -19,6 +20,8 @@ export const ModalLoginTitle = styled.h2`
 `;
 
 export const ModalInput = styled(Input)`
+    height: 46px;
+
     & + & {
         margin: 10px 0 0;
     }
@@ -34,6 +37,20 @@ export const ModalLoginCheckWrap = styled.div`
     margin: 18px 0;
     font-size: 14px;
     line-height: 22px;
+
+    input[type='checkbox'] {
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked + label::before {
+            background: url(${CheckIcon}) #1374f8 no-repeat center center/13px;
+        }
+    }
 
     label {
         display: inline-block;
@@ -102,6 +119,7 @@ export const ModalRegisterLabel = styled(Label)`
 export const ModalRegisterInput = styled(Input)`
     float: left;
     width: calc(100% - 100px);
+    height: 46px;
 `;
 
 export const ModalRegisterEmail = styled(Input)`
@@ -122,10 +140,12 @@ export const ModalEmailTail = styled.select`
 
 export const ModalTelInput = styled(Input)`
     width: 92px;
+    height: 46px;
 `;
 
 export const ModalTelInputCheck = styled(Input)`
     width: 320px;
+    height: 46px;
     margin: 0 0 0 100px;
 `;
 
@@ -140,6 +160,7 @@ export const ModalTelConfirm = styled(Btn)`
     width: calc(100% - 100px - 320px - 10px);
     height: 46px;
     margin: 0 0 0 10px;
+    padding: 0 10px;
 `;
 
 export const TermsTxt = styled(Label)`
@@ -175,10 +196,11 @@ export const TermsRequired = styled.span`
 export const ModalBtn = styled(Btn)`
     width: 100%;
     height: 60px;
+    margin: 10px 0 0;
 `;
 
 export const ModalAddMem = styled.div`
-    padding: 24px 0 40px;
+    padding: 24px 0 0;
     font-size: 14px;
     text-align: center;
 

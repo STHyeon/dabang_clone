@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react';
 
 import { Icon, IconProps } from './index';
 
@@ -7,11 +7,9 @@ export default {
     title: 'Atoms/Icon'
 } as Meta;
 
-const Template: Story<IconProps> = (args) => <Icon {...args} />;
-
-export const general = Template.bind({});
+export const general = (args: IconProps) => <Icon {...args} />;
 general.args = {
-    IconType: 'fas',
-    IconTitle: 'angle-right',
-    IconSize: '24px'
+    iconType: 'fas',
+    iconTitle: 'chevron-right',
+    iconSize: '24px'
 };

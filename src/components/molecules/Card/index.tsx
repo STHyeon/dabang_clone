@@ -50,7 +50,7 @@ export function Card({
         <S.CardWrapper CardType={CardType} boxWidth={boxWidth} {...props}>
             {to ? (
                 <S.LinkWrapper to="">
-                    {imgSrc && (
+                    {imgSrc && alt && (
                         <S.ImgWrapper cardImgHeight={cardImgHeight}>
                             <Img src={imgSrc} alt={alt} />
                         </S.ImgWrapper>
@@ -62,7 +62,7 @@ export function Card({
                             {Flag && (
                                 <S.Flag>
                                     {Flag}
-                                    {chkDate && <EventDate EventDateType="type01" dateAt={chkDate} />}
+                                    {chkDate && <EventDate eventDateType="type01" dateAt={chkDate} />}
                                 </S.Flag>
                             )}
                         </S.FlagWrapper>
