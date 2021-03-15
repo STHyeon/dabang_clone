@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BaseTemplate } from '../../templates';
-import { GNB, CardGrid } from 'components';
+import { CardGrid } from 'components';
 import { LOVEMENU } from 'utils/contents/string';
 import { Type05CardData } from 'utils/contents/data';
 import { CardProps } from '../../components/molecules/Card';
@@ -48,9 +48,9 @@ export function Love() {
     return (
         <BaseTemplate>
             <S.LoveTitle>관심목록</S.LoveTitle>
-            <S.List>
+            {/* <S.List>
                 <GNB items={LOVEMENU} GNBType="type02" itemWidth="20%" hoverColor="#000000" fontColor="#888888" />
-            </S.List>
+            </S.List> */}
             <S.AlertBox className="clearfix">
                 <S.RecData className="fl_l">
                     총 <S.RecDataNum>1개</S.RecDataNum>의 최근 본 방이 있습니다

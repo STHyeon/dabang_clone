@@ -19,7 +19,7 @@ export function Find() {
     return (
         <BaseTemplate full>
             <S.AddressBox>
-                <Input onChange={handleKeywordChange} placeholder="주소를 입력해주세요." description="주소입력칸" inputHeight="64px" />
+                <Input onChange={handleKeywordChange} placeholder="주소를 입력해주세요." description="주소입력칸" />
             </S.AddressBox>
             <S.Container className="clearfix">
                 <S.FindRoomBox className="fl_l" setFindRoom={findRoom}>
@@ -31,7 +31,7 @@ export function Find() {
                     </S.RoomBox>
                     {findRoom ? null : (
                         <S.IconBox onClick={handleFindRoom}>
-                            <Icon IconType="fas" IconTitle="angle-right" IconSize="24px" />
+                            <Icon iconType="fas" iconTitle="angle-right" iconSize="24px" />
                         </S.IconBox>
                     )}
                 </S.FindRoomBox>
